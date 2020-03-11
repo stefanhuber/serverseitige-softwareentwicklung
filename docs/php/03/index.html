@@ -302,15 +302,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_get-beispiel" class="md-nav__link">
-    $_GET Beispiel
+  <a href="#beispiel-_get" class="md-nav__link">
+    Beispiel: $_GET
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_post" class="md-nav__link">
-    $_POST
+  <a href="#beispiel-_post" class="md-nav__link">
+    Beispiel: $_POST
   </a>
   
 </li>
@@ -436,15 +436,15 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_get-beispiel" class="md-nav__link">
-    $_GET Beispiel
+  <a href="#beispiel-_get" class="md-nav__link">
+    Beispiel: $_GET
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_post" class="md-nav__link">
-    $_POST
+  <a href="#beispiel-_post" class="md-nav__link">
+    Beispiel: $_POST
   </a>
   
 </li>
@@ -480,7 +480,7 @@
 <li><code>$_REQUEST</code>: Zusammenfassung von <code>$_GET</code>, <code>$_POST</code>, <code>$_COOKIE</code></li>
 <li><code>$_ENV</code>: Umgebungsvariablen am Server</li>
 </ul>
-<h2 id="_get-beispiel">$_GET Beispiel</h2>
+<h2 id="beispiel-_get">Beispiel: $_GET</h2>
 <p>Die Superglobal <code>$_GET</code> enthält alle Schlüssel/Wert Paare, welche als URL-Parameter (Querystring) an das PHP-Skript übergeben wurden.</p>
 <p>Die Variable <code>$name</code> im Skript wird über den URL-Parameter <code>name</code> gesetzt. Wird kein URL-Parameter <code>name</code> angegeben, so erhält die Variable <code>$name</code> den Wert <code>"Welt"</code> (Null-Coalesing Operator).</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -500,8 +500,11 @@
 </pre></div>
 
 
-<p>Im Screenshot wird das Skript über den lokalen Web-Server aufgerufen mit der URL <code>http://localhost:8080?name=Franzi</code>. Dadurch wird die Variable <code>$name</code> mit dem Wert <code>"Franzi"</code> belegt und die Ausgabe resultiert in <code>Hallo Franzi</code>.</p>
-<h2 id="_post">$_POST</h2>
+<p>Wird das Skript über die URL <code>http://localhost:9000</code> aufgerufen, sieht die Ausgabe ähnlich zum Screenshot unten aus:</p>
+<p><img alt="Screenshot 1" src="../images/03_02.png" title="Screenshot 1" /></p>
+<p>Falls das Skript über die URL <code>http://localhost:9000?name=Franzi</code> aufgerufen wird, wird die Variable <code>$name</code> mit dem Wert <code>"Franzi"</code> belegt und die Ausgabe resultiert in <code>Hallo Franzi</code>. Dies entspricht dem unten angeführten Screenshot:</p>
+<p><img alt="Screenshot 2" src="../images/03_01.png" title="Screenshot 2" /></p>
+<h2 id="beispiel-_post">Beispiel: $_POST</h2>
 <p>Die Superglobal <code>$_POST</code> enthält alle Schlüssel/Wert Paare, welche im HTTP-Body an das PHP-Skript übergeben wurden.</p>
 <p>Die Variable <code>$name</code> im Skript wird über ein Formularfeld gesetzt dieses hat das Attribute <code>name</code> mit dem Attributwert <code>firstname</code> gesetzt. Dadurch enthält der HTTP-Body beim Absenden des Formulars den Schlüssel <code>firstname</code> mit entsprechendem Wert (aus dem Formularfeld).</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
@@ -526,7 +529,9 @@
 
 
 <p>Im Screenshot wird das Skript über den lokalen Web-Server aufgerufen mit der URL <code>http://localhost:8080</code>.</p>
+<p><img alt="Screenshot 3" src="../images/03_03.png" title="Screenshot 3" /></p>
 <p>Bei Absenden des Formulars mit dem Wert <code>Studenten</code> wird das Schlüssel/Wert Paar <code>firstname=Studenten</code> als POST (HTTP-Request mit Methode POST) an den Web-Server gesendet. Die Verarbeitung am Web-Server führt dazu, dass die Variable <code>$name</code> mit dem Wert <code>Studenten</code> belegt wird und an unterschiedlichen Stellen zur entsprechenden Ausgabe führt:</p>
+<p><img alt="Screenshot 3" src="../images/03_04.png" title="Screenshot 3" /></p>
                 
                   
                 
