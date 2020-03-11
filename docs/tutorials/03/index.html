@@ -1,0 +1,703 @@
+
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung">
+      
+      
+      
+        <meta name="author" content="Stefan Huber">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>PHP Konfiguration - Serverseitige Softwareentwicklung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#php-konfiguration" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Serverseitige Softwareentwicklung" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Serverseitige Softwareentwicklung
+            </span>
+            <span class="md-header-nav__topic">
+              
+                PHP Konfiguration
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Serverseitige Softwareentwicklung" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Serverseitige Softwareentwicklung
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      PHP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        PHP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/01/" title="Grundlagen" class="md-nav__link">
+      Grundlagen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/02/" title="Arrays" class="md-nav__link">
+      Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/03/" title="Superglobals" class="md-nav__link">
+      Superglobals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/04/" title="Funktionen" class="md-nav__link">
+      Funktionen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../php/05/" title="OOP" class="md-nav__link">
+      OOP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01/" title="PHP Installation" class="md-nav__link">
+      PHP Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02/" title="PHP Webserver" class="md-nav__link">
+      PHP Webserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        PHP Konfiguration
+      </label>
+    
+    <a href="./" title="PHP Konfiguration" class="md-nav__link md-nav__link--active">
+      PHP Konfiguration
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phpini" class="md-nav__link">
+    php.ini
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-der-ini-datei" class="md-nav__link">
+    Syntax der ini-Datei
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wichtige-konfigurationen" class="md-nav__link">
+    Wichtige Konfigurationen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erweiterungen-aktivieren" class="md-nav__link">
+    Erweiterungen aktivieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browscap-aktivieren" class="md-nav__link">
+    Browscap aktivieren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfigurationsubersicht" class="md-nav__link">
+    Konfigurationsübersicht
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haufige-probleme" class="md-nav__link">
+    Häufige Probleme
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#phpini" class="md-nav__link">
+    php.ini
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#syntax-der-ini-datei" class="md-nav__link">
+    Syntax der ini-Datei
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wichtige-konfigurationen" class="md-nav__link">
+    Wichtige Konfigurationen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#erweiterungen-aktivieren" class="md-nav__link">
+    Erweiterungen aktivieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#browscap-aktivieren" class="md-nav__link">
+    Browscap aktivieren
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konfigurationsubersicht" class="md-nav__link">
+    Konfigurationsübersicht
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#haufige-probleme" class="md-nav__link">
+    Häufige Probleme
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/edit/master/docs/tutorials/03.md" title="Seite editieren" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="php-konfiguration">PHP Konfiguration</h1>
+<p>Die PHP-Laufzeitumgebung wird über eine ini-Datei konfiguriert. In diesem Tutorial wird erklärt wie Sie PHP über eine ini-Datei konfigurieren und wie eine ini-Datei grundsätzlich aufgebaut ist.</p>
+<h2 id="phpini">php.ini</h2>
+<p>PHP nutzt die Konfigurationsdatei mit dem Namen <code>php.ini</code> im Verzeichnis <code>C:\php</code> als zentrale Konfigurationsdatei. Nach der Installation über das <a href="../01">Tutorial</a> liegen im Ordner <code>C:\php</code> 2 ini-Dateien als Vorlagen. <code>php.ini-development</code> als Konfiguration für einen Entwicklungsrechner und <code>php.ini-production</code> für eine produktive Umgebung.</p>
+<p>Für Ihren Entwicklungsrechner soll die Datei <code>php.ini-development</code> in <code>php.ini</code> umbenannt werden. Dadurch wird diese Datei zur aktuellen Konfiguration der PHP-Laufzeitumgebung.</p>
+<h2 id="syntax-der-ini-datei">Syntax der ini-Datei</h2>
+<ul>
+<li>Die ini-Datei ist in Abschnitte gegliedert. Ein Abschnitt wird mit eckigen Klammern ausgewiesen. Zum Beispiel wird der Abschnitt um Konfigurationen zu PostgreSQL durchzuführen als <code>[PostgreSQL]</code> angegeben.</li>
+<li>Eine ini-Datei kann Kommentare enthalten, diese werden über das <code>;</code>-Symbol angegeben.</li>
+<li>Eine Konfiguration wird als Schlüssel/Wert Paar angegeben (zB <code>post_max_size = 8M</code>).</li>
+</ul>
+<p>Im folgenden findet sich ein beispielhafter Auszug einer ini-Datei:</p>
+<div class="codehilite"><pre><span></span><span class="k">[PHP]</span>
+<span class="c1">; Maximum size of POST data that PHP will accept.</span>
+<span class="c1">; Its value may be 0 to disable the limit. It is ignored if POST data reading</span>
+<span class="c1">; is disabled through enable_post_data_reading.</span>
+<span class="c1">; http://php.net/post-max-size</span>
+<span class="na">post_max_size</span> <span class="o">=</span> <span class="s">8M</span>
+
+<span class="k">[CLI Server]</span>
+<span class="c1">; Whether the CLI web server uses ANSI color coding in its terminal output.</span>
+<span class="na">cli_server.color</span> <span class="o">=</span> <span class="s">On</span>
+</pre></div>
+
+
+<h2 id="wichtige-konfigurationen">Wichtige Konfigurationen</h2>
+<h3 id="erweiterungen-aktivieren">Erweiterungen aktivieren</h3>
+<p>Es gibt eine Vielzahl an Erweiterungen, welche mit PHP mitgeliefert werden. Diese Erweiterungen sind anfänglich deaktiviert. Um eine spezielle Erweiterung zu aktivieren, muss der Kommentar zum entsprechenden Schlüssel/Wert Paar entfernt werden.</p>
+<p>Die Erweiterung zur Nutzung von SQLite ist deaktiviert. Suchen Sie dazu das Schlüssel/Wert Paar <code>extension=pdo_sqlite</code>:</p>
+<div class="codehilite"><pre><span></span><span class="c1">;extension=pdo_sqlite</span>
+</pre></div>
+
+
+<p>Falls dieses mit einem Kommentar versehen ist wie im obigen Beispiel, entfernen Sie den Kommentar und die Erweiterung ist aktiviert:</p>
+<div class="codehilite"><pre><span></span><span class="n">extension</span><span class="o">=</span><span class="n">pdo_sqlite</span>
+</pre></div>
+
+
+<h3 id="browscap-aktivieren">Browscap aktivieren</h3>
+<p>Browscap bietet die Funktion HTTP-Header von User-Agents auszuwerten. Jeder User-Agent ist über einen speziellen "User-Agent String" identifiziert. Ein "User-Agent String" ist nicht standardisiert, mit Bibliothenk wie Browscap können wichtige Informationen aus diesen Strings extrahiert werden.</p>
+<p>Im folgenden findet sich ein Beispiel eines "User-Agent Strings". Dieses Beispiel stammt aus einem Firefox Browser auf einem Windows Desktop Rechner:</p>
+<div class="codehilite"><pre><span></span><span class="n">Mozilla</span><span class="o">/</span><span class="mi">5</span><span class="p">.</span><span class="mi">0</span> <span class="p">(</span><span class="n">Windows</span> <span class="n">NT</span> <span class="mi">6</span><span class="p">.</span><span class="mi">1</span><span class="p">;</span> <span class="n">Win64</span><span class="p">;</span> <span class="n">x64</span><span class="p">;</span> <span class="n">rv</span><span class="p">:</span><span class="mi">47</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span> <span class="n">Gecko</span><span class="o">/</span><span class="mi">20100101</span> <span class="n">Firefox</span><span class="o">/</span><span class="mi">47</span><span class="p">.</span><span class="mi">0</span>
+</pre></div>
+
+
+<p>Um in PHP Browscap zu aktivieren, muss (1) die aktuelle Browscap ini-Datei heruntergeladen werden und (2) muss diese über die <code>php.ini</code> eingebunden werden.</p>
+<ol>
+<li>Laden Sie dazu die entsprechende ini-Datei der <a href="http://browscap.org/">Browscap Website</a> herunter (<code>php_browscap.ini</code>).</li>
+<li>Legen Sie die Datei in das Verzeichnis <code>C:\php</code></li>
+<li>Referenzieren Sie die ini-Datei über eine absolute Pfadangabe in der <code>php.ini</code>. Ändern Sie dazu die die <code>php.ini</code> an der entsprechenden Stelle folgend ab:</li>
+</ol>
+<div class="codehilite"><pre><span></span><span class="k">[browscap]</span>
+<span class="c1">; http://php.net/browscap</span>
+<span class="na">browscap</span> <span class="o">=</span> <span class="s">C:/php/php_browscap.ini</span>
+</pre></div>
+
+
+<h2 id="konfigurationsubersicht">Konfigurationsübersicht</h2>
+<p>Um die Konfiguration einer PHP-Laufzeitumgebung einzusehen und zu prüfen, biete PHP die Funktion <code>phpinfo</code>. Erstellen Sie eine Datei <code>index.php</code> innerhalb eines beliebigen Ordners. Der Inhalt der <code>index.php</code> soll folgenden Quellcode enthalten:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nb">phpinfo</span><span class="p">();</span>
+</pre></div>
+
+
+<p>Starten Sie einen lokalen Web-Server und öffnen Sie die <code>index.php</code> Datei über den Web-Browser. Es sollte eine Website erscheinen die dem Screenshot entspricht. Sie finden darauf alle Konfigurationen strukturiert aufgelistet, welche in der <code>php.ini</code> vorgenommen sind.</p>
+<p><img alt="PHP Info" src="../images/03_1.png" title="PHP Info" /></p>
+<h2 id="haufige-probleme">Häufige Probleme</h2>
+<ul>
+<li>Falls der Web-Server gestartet ist, während eine Konfiguration geändert wird, muss der Web-Server gestoppt und neu gestartet werden. Für CLI-Skripte ist kein Neustart erforderlich.</li>
+</ul>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../02/" title="PHP Webserver" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                PHP Webserver
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            CC-BY-SA / Stefan Huber
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

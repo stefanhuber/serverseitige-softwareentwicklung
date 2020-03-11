@@ -1,0 +1,38 @@
+site_name: Serverseitige Softwareentwicklung
+site_description: Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung
+site_author: Stefan Huber
+
+repo_url: https://github.com/stefanhuber/serverseitige-softwareentwicklung
+
+nav:
+  - 'Home': 'index.md'
+  - 'PHP':
+    - 'Grundlagen': 'php/01.md'
+    - 'Arrays': 'php/02.md'
+    - 'Superglobals': 'php/03.md'
+    - 'Funktionen': 'php/04.md'
+    - 'OOP': 'php/05.md'
+  - 'Tutorials':
+    - 'PHP Installation': 'tutorials/01.md'
+    - 'PHP Webserver': 'tutorials/02.md'
+    - 'PHP Konfiguration': 'tutorials/03.md' 
+
+theme:
+  name: material
+  language: de
+
+copyright: 'CC-BY-SA / Stefan Huber'
+
+docs_dir: content
+site_dir: docs
+
+extra:
+  search:
+    language: de
+
+markdown_extensions:
+  - codehilite
+  - admonition
+
+plugins:
+  - search

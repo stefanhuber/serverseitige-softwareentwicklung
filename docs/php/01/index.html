@@ -1,0 +1,965 @@
+
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung">
+      
+      
+      
+        <meta name="author" content="Stefan Huber">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Grundlagen - Serverseitige Softwareentwicklung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#grundlagen" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Serverseitige Softwareentwicklung" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Serverseitige Softwareentwicklung
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Grundlagen
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Serverseitige Softwareentwicklung" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Serverseitige Softwareentwicklung
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      PHP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        PHP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Grundlagen
+      </label>
+    
+    <a href="./" title="Grundlagen" class="md-nav__link md-nav__link--active">
+      Grundlagen
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erstes-beispiel" class="md-nav__link">
+    Erstes Beispiel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-in-html-einbetten" class="md-nav__link">
+    PHP in HTML einbetten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kommentare" class="md-nav__link">
+    Kommentare
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variablen" class="md-nav__link">
+    Variablen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datentypen" class="md-nav__link">
+    Datentypen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting" class="md-nav__link">
+    Casting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operatoren" class="md-nav__link">
+    Operatoren
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-konkatenation" class="md-nav__link">
+    String Konkatenation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-coalesing-operator" class="md-nav__link">
+    Null-Coalesing Operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elvis-operator" class="md-nav__link">
+    Elvis Operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spaceship-operator" class="md-nav__link">
+    Spaceship Operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vergleichsoperator" class="md-nav__link">
+    Vergleichsoperator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedingte-ausdrucke" class="md-nav__link">
+    Bedingte Ausdrücke
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02/" title="Arrays" class="md-nav__link">
+      Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03/" title="Superglobals" class="md-nav__link">
+      Superglobals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04/" title="Funktionen" class="md-nav__link">
+      Funktionen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05/" title="OOP" class="md-nav__link">
+      OOP
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/01/" title="PHP Installation" class="md-nav__link">
+      PHP Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/02/" title="PHP Webserver" class="md-nav__link">
+      PHP Webserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/03/" title="PHP Konfiguration" class="md-nav__link">
+      PHP Konfiguration
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#erstes-beispiel" class="md-nav__link">
+    Erstes Beispiel
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#php-in-html-einbetten" class="md-nav__link">
+    PHP in HTML einbetten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kommentare" class="md-nav__link">
+    Kommentare
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variablen" class="md-nav__link">
+    Variablen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datentypen" class="md-nav__link">
+    Datentypen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#casting" class="md-nav__link">
+    Casting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operatoren" class="md-nav__link">
+    Operatoren
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#string-konkatenation" class="md-nav__link">
+    String Konkatenation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#null-coalesing-operator" class="md-nav__link">
+    Null-Coalesing Operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elvis-operator" class="md-nav__link">
+    Elvis Operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spaceship-operator" class="md-nav__link">
+    Spaceship Operator
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vergleichsoperator" class="md-nav__link">
+    Vergleichsoperator
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bedingte-ausdrucke" class="md-nav__link">
+    Bedingte Ausdrücke
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/edit/master/docs/php/01.md" title="Seite editieren" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="grundlagen">Grundlagen</h1>
+<h2 id="erstes-beispiel">Erstes Beispiel</h2>
+<p>PHP-Code wird innerhalb einer Textdatei mit Suffix <code>.php</code> geschrieben. PHP-Skripte beginnen mit dem sog. PHP-Tag <code>&lt;?php</code>. Falls die Textdatei noch weitere Inhalte (zB HTML) enthält kann PHP-Code auch Blockweise eingefügt werden, dafür müssen Blöcke mit <code>&lt;?php</code> geöffnet und <code>?&gt;</code> beendet werden.</p>
+<p>Jede Anweisungszeile in PHP muss mit einem Semikolon (<code>;</code>) abgeschlossen werden. Ausgaben werden über den <code>echo</code> Befehl durchgeführt.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="k">echo</span> <span class="s2">&quot;Hallo PHP!&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<p>PHP kann als Skript über den PHP-Interpreter auf der Kommandozeile ausgeführt werden. Dazu wird der PHP-Interpreter auf der Kommondozeile ausgeführt und das auszuführende Skript wird als Argument an den Interpreter übergeben:</p>
+<div class="codehilite"><pre><span></span>&gt; php example.php
+Hallo PHP!
+</pre></div>
+
+
+<h2 id="php-in-html-einbetten">PHP in HTML einbetten</h2>
+<p>PHP kann innerhalb eines HTML-Dokuments eingebettet werden. Die Quellcode-Datei muss mit dem Suffix <code>.php</code> abgespeichert werden, sodass der PHP-Interpreter die Datei verarbeitet.</p>
+<p>PHP-Code wird innerhalb von PHP-Tags <code>&lt;?php</code> und <code>?&gt;</code> eingefügt. Der PHP-Code wird am Web-Server verarbeitet und nicht an den Web-Client gesendet.</p>
+<div class="codehilite"><pre><span></span><span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;head&gt;</span>
+<span class="x">        &lt;title&gt;Hallo PHP&lt;/title&gt;</span>
+<span class="x">    &lt;/head&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        </span><span class="cp">&lt;?php</span>
+            <span class="c1">// Ein Kommentar: Dieser wird nicht ins HTML geschrieben</span>
+            <span class="k">echo</span> <span class="s2">&quot;Hallo PHP!&quot;</span><span class="p">;</span>
+        <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+
+
+<h2 id="kommentare">Kommentare</h2>
+<p>Im PHP-Quellcode können natürlich auch Kommentare eingefügt werden. Es gibt einzeilige- und mehrzeilige Kommentare:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="c1">// einzeiliger Kommentar</span>
+<span class="c1"># auch ein einzeiliger Kommentar</span>
+
+<span class="cm">/*</span>
+<span class="cm">mehrzeiliger</span>
+<span class="cm">Kommentar</span>
+<span class="cm">...</span>
+<span class="cm">*/</span>
+</pre></div>
+
+
+<h2 id="variablen">Variablen</h2>
+<p>Eine Variable in PHP wird mit <code>$</code>-Zeichen eingeleitet und es folgt ein Variablenbezeichner. Folgende weitere Regeln sind zu beachten:</p>
+<ul>
+<li>Ein Variablenname muss mit einem Buchstaben oder Unterstrich starten</li>
+<li>Ab der zweiten Stelle kann ein Variablenname auch Zahlen enthalten</li>
+<li>Variablennamen sind case-sensitive (<code>$var</code> und <code>$VAR</code> sind verschiedene Varialben)</li>
+</ul>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$my_var</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+<span class="nv">$message</span> <span class="o">=</span> <span class="s2">&quot;hello world&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<h2 id="datentypen">Datentypen</h2>
+<p>PHP ist eine dynamisch Typisierte Sprache. Das bedeutet es müssen keine Datentypen für Variablen angegeben werden, diese werden vom PHP-Interpreter abgeleitet. Dennoch legt PHP 10 verschiedene Datentypen fest, welche einer Variable implizit entsprechen.</p>
+<ul>
+<li>Einfache Datentypen: <code>boolean</code>, <code>integer</code>, <code>float</code> und <code>string</code></li>
+<li>Zusammengesetzte Datentypen: <code>array</code>, <code>object</code>, <code>iterable</code> und <code>callable</code></li>
+<li>Spezielle Datentypen: <code>resource</code>, <code>NULL</code></li>
+</ul>
+<p>Die Funktion <code>var_dump</code> kann verwendet werden um den Wert und den Datentyp einer Variable auszugeben. Dies ist hilfreich für das Debugging:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mf">3.1</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>  <span class="c1">// float(3.1)</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$b</span><span class="p">);</span>  <span class="c1">// bool(true)</span>
+</pre></div>
+
+
+<h3 id="boolean">Boolean</h3>
+<p>Generell interpretiert PHP alles als <code>true</code> außer:</p>
+<ul>
+<li>den boolschen Wert <code>false</code></li>
+<li>die Zahlen <code>0</code>, <code>-0</code>, <code>0.0</code>, <code>-0.0</code></li>
+<li>den Leerstring <code>""</code> und <code>"0"</code></li>
+<li>ein leeres Array <code>[]</code></li>
+<li><code>NULL</code></li>
+</ul>
+<h3 id="casting">Casting</h3>
+<p>PHP unterstützt für jeden Datentyp und weitere Fälle eine <code>is_*</code> Funktion. Es kann zB mit der Funktion <code>is_int</code> geprüft werden, ob eine Variable dem Datentyp <code>integer</code> entspricht.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$a</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="mi">123</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nb">is_null</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span>   <span class="c1">// false</span>
+<span class="k">echo</span> <span class="nb">is_string</span><span class="p">(</span><span class="nv">$a</span><span class="p">);</span> <span class="c1">// true</span>
+<span class="k">echo</span> <span class="nb">is_float</span><span class="p">(</span><span class="nv">$b</span><span class="p">)</span>   <span class="c1">// false</span>
+</pre></div>
+
+
+<p>Es kann der Datentyp einer Variable durch Casting explizit verändert werden:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$var1</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nv">$var2</span> <span class="o">=</span> <span class="p">(</span><span class="nx">bool</span><span class="p">)</span> <span class="nv">$var1</span><span class="p">;</span>
+<span class="nb">var_dump</span><span class="p">(</span><span class="nv">$var2</span><span class="p">)</span>  <span class="c1">// bool(true)</span>
+</pre></div>
+
+
+<p>Folgende Casting Operationen sind definiert:</p>
+<ul>
+<li><code>(int)</code>, <code>(integer)</code> in Integer casten</li>
+<li><code>(bool)</code>, <code>(boolean)</code> in Boolean casten</li>
+<li><code>(float)</code>, <code>(double)</code>, <code>(real)</code> in Float casten</li>
+<li><code>(string)</code> in String casten</li>
+<li><code>(array)</code> in Array casten</li>
+<li><code>(object)</code> in Objekt casten</li>
+</ul>
+<h2 id="operatoren">Operatoren</h2>
+<p>PHP verfügt über alle gängigen Operatoren, wie sie aus anderen Programmiersprachen bekannt sind. Einige wichtige Ergänzungen:</p>
+<table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Bezeichnung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>.</code></td>
+<td>String Konkatenation</td>
+</tr>
+<tr>
+<td><code>??</code></td>
+<td>Null-Coalesing Operator</td>
+</tr>
+<tr>
+<td><code>?:</code></td>
+<td>Elvis Operator</td>
+</tr>
+<tr>
+<td><code>&lt;=&gt;</code></td>
+<td>Spaceship Operator</td>
+</tr>
+<tr>
+<td><code>===</code></td>
+<td>Vergleichsoperator: Wert und Datentyp</td>
+</tr>
+</tbody>
+</table>
+<h4 id="string-konkatenation">String Konkatenation</h4>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$str</span> <span class="o">=</span> <span class="s2">&quot;abc&quot;</span><span class="p">;</span>
+<span class="nv">$res</span> <span class="o">=</span> <span class="nv">$str</span> <span class="o">.</span> <span class="s2">&quot;-&quot;</span> <span class="o">.</span> <span class="s2">&quot;def&quot;</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$res</span><span class="p">;</span>  <span class="c1">// abc-def</span>
+</pre></div>
+
+
+<h4 id="null-coalesing-operator">Null-Coalesing Operator</h4>
+<p>Zuweisung eines Default-Wertes für eine Variable. Der erste Wert der existiert und nicht <code>NULL</code> ist. Im Beispiel ist <code>$z</code> nicht definiert, <code>$a</code> hat den Wert <code>NULL</code> und <code>$b</code> den Wert <code>10</code>. Die Null-Coalesing Kette wird solange durchgeführt bis ein gültiger Wert gefunden wird.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$a</span> <span class="o">=</span> <span class="k">NULL</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nv">$c</span> <span class="o">=</span> <span class="nv">$z</span> <span class="o">??</span> <span class="nv">$a</span> <span class="o">??</span> <span class="nv">$b</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$c</span><span class="p">;</span>  <span class="c1">// 10</span>
+</pre></div>
+
+
+<h4 id="elvis-operator">Elvis Operator</h4>
+<p>Der Elvis Operator ist eine Vereinfachung des bekannten ternären Operators: <code>linker Ausdruck ?: rechter Ausdruck</code>. Die Logik ist dabei so gestaltet, dass wenn der linke Ausdruck als wahr interpretiert wird, dieser zurückgegeben wird ansonsten der rechte Ausdruck (als Alternative).</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">?:</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nv">$b</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">?:</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nv">$a</span><span class="p">;</span>  <span class="c1">// 5</span>
+<span class="k">echo</span> <span class="nv">$b</span><span class="p">;</span>  <span class="c1">// 10</span>
+</pre></div>
+
+
+<h4 id="spaceship-operator">Spaceship Operator</h4>
+<p>Der Spaceship Operator ist ein spezieller Operator um Ausdrücke zu vergleichen. Dieser gibt die Werte <code>-1</code>, <code>0</code> oder <code>1</code> zurück, jenachdem ob der erste Ausdruck kleiner, gleich oder größer als der zweite Audruck ist. Der Spaceship Operator kann auch für Strings verwendet werden:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// 0</span>
+<span class="k">echo</span> <span class="mi">1</span> <span class="o">&lt;=&gt;</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="k">echo</span> <span class="mi">0</span> <span class="o">&lt;=&gt;</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// -1</span>
+
+<span class="k">echo</span> <span class="s2">&quot;a&quot;</span> <span class="o">&lt;=&gt;</span> <span class="s2">&quot;a&quot;</span><span class="p">;</span> <span class="c1">// 0</span>
+<span class="k">echo</span> <span class="s2">&quot;z&quot;</span> <span class="o">&lt;=&gt;</span> <span class="s2">&quot;a&quot;</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="k">echo</span> <span class="s2">&quot;a&quot;</span> <span class="o">&lt;=&gt;</span> <span class="s2">&quot;z&quot;</span><span class="p">;</span> <span class="c1">// -1</span>
+</pre></div>
+
+
+<h4 id="vergleichsoperator">Vergleichsoperator</h4>
+<p>Generell sind 2 Vergleichsoperatoren zu unterscheiden <code>==</code> und <code>===</code>. Erster untersucht nur ob zwei Werte identisch sind, so wäre <code>"5" == 5</code> wahr. Der zweite Vergleichoperator untersucht jedoch auch, ob die 2 Operanden den selben Datentyp haben, somit wäre <code>"5" === 5</code> falsch.</p>
+<h2 id="bedingte-ausdrucke">Bedingte Ausdrücke</h2>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$var</span> <span class="o">=</span> <span class="mi">10</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nv">$var</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Der Wert ist 5&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="nx">elif</span> <span class="p">(</span><span class="nv">$var</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Der Wert ist kleiner als 5&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;Der Wert ist größer als 5&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>PHP verfügt auch über einen <code>switch</code>-Ausdruck, dieser kann in der PHP-Dokumentation nachgelesen werden.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../02/" title="Arrays" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                Arrays
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            CC-BY-SA / Stefan Huber
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
