@@ -14,6 +14,10 @@
  - [PHP Webserver](tutorials/02)
  - [PHP Konfiguration](tutorials/03)
 
+## Übungstutorials
+
+ - [Übungsblatt 1 - Übung 0](exercises/01)
+
 ## Mitwirkung
 
 Das gesamte Skriptum inkl. Übungen findet sich innerhalb eines [GIT-Repositories](https://github.com/stefanhuber/serverseitige-softwareentwicklung) auf der Plattform Github. Über sog. `Pull-Requests` können Änderungen am Inhalt durchgeführt werden. Etwaige Rechtschreibfehler oder Grammatikfehler können natürlich gerne ausgebessert werden. Änderungsvorschläge und Ergänzungen können auch gerne als [Issue](https://github.com/stefanhuber/serverseitige-softwareentwicklung/issues) angegeben werden.
