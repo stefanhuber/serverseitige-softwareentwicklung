@@ -15,7 +15,9 @@ nav:
   - 'Tutorials':
     - 'PHP Installation': 'tutorials/01.md'
     - 'PHP Webserver': 'tutorials/02.md'
-    - 'PHP Konfiguration': 'tutorials/03.md' 
+    - 'PHP Konfiguration': 'tutorials/03.md'
+  - 'Übungstutorials':
+    - 'Übungsblatt 1 - Übung 0': 'exercises/01.md'
 
 theme:
   name: material
