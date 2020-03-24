@@ -7,12 +7,17 @@
  - [Superglobals](php/03)
  - [Funktionen](php/04)
  - [Objektorientierte Programmierung](php/05)
+ - [Sessions und Cookies](php/06)
+ - [Errors und Exceptions](php/07)
+ - [Arbeiten mit Datenbanken](php/08)
+ - [Quellcode einbinden](php/09)
  
 ## Tutorials
 
  - [PHP Installation](tutorials/01)
  - [PHP Webserver](tutorials/02)
  - [PHP Konfiguration](tutorials/03)
+ - [Arbeiten mit SQLite](tutorials/04)
 
 ## Übungstutorials
 
