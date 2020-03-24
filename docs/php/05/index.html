@@ -333,6 +333,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#magic-methods" class="md-nav__link">
+    Magic Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__set-und-__get" class="md-nav__link">
+    __set und __get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__invoke" class="md-nav__link">
+    __invoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__tostring" class="md-nav__link">
+    __toString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__call" class="md-nav__link">
+    __call
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vererbung" class="md-nav__link">
     Vererbung
   </a>
@@ -346,6 +387,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#traits" class="md-nav__link">
+    Traits
+  </a>
+  
+</li>
+      
       
       
       
@@ -354,6 +402,54 @@
   
 </nav>
     
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06/" title="Sessions und Cookies" class="md-nav__link">
+      Sessions und Cookies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07/" title="Errors und Exceptions" class="md-nav__link">
+      Errors und Exceptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08/" title="Datenbanken" class="md-nav__link">
+      Datenbanken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09/" title="Quellcode einbinden" class="md-nav__link">
+      Quellcode einbinden
+    </a>
   </li>
 
         
@@ -413,6 +509,18 @@
   <li class="md-nav__item">
     <a href="../../tutorials/03/" title="PHP Konfiguration" class="md-nav__link">
       PHP Konfiguration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/04/" title="Arbeiten mit SQLite" class="md-nav__link">
+      Arbeiten mit SQLite
     </a>
   </li>
 
@@ -486,6 +594,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#magic-methods" class="md-nav__link">
+    Magic Methods
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#__set-und-__get" class="md-nav__link">
+    __set und __get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__invoke" class="md-nav__link">
+    __invoke
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__tostring" class="md-nav__link">
+    __toString
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#__call" class="md-nav__link">
+    __call
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#vererbung" class="md-nav__link">
     Vererbung
   </a>
@@ -495,6 +644,13 @@
         <li class="md-nav__item">
   <a href="#statische-member" class="md-nav__link">
     Statische Member
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#traits" class="md-nav__link">
+    Traits
   </a>
   
 </li>
@@ -522,7 +678,7 @@
 <p>PHP ist eine objektorientierte Programmiersprache und besitzt alle gängigen Konzepte einer objektorientierten Programmiersprache. Alle gängigen Konzepte wie <code>Klassenvererbung</code>, <code>Member Sichtbarkeit</code>, <code>Interfaces</code>, <code>statische Member</code>, <code>anonyme Klassen</code>, <code>abstrakte Klassen</code> sind auch in PHP vorhanden.</p>
 <h2 id="klassen">Klassen</h2>
 <p>Klassen werden über das Schlüsselwort <code>class</code> definiert. Es gibt spezielle Methoden wie den Konstruktur (<code>__construct</code>), welche mit doppeltem Unterstrich beginnen. Alle Member sind generell <code>public</code> außer es wird explizit anders angegeben wie zB für den Member <code>$color</code>.</p>
-<p>Mit dem Schlüsselwort <code>new</code> können Klasseninstanzen erzeugt werden. Über die Variable <code>$this</code> kann auf die Instanz zugegriffen werden. Zugriff auf Member der Instanz wird über <code>-&gt;</code> durchgeführt. So wird zum Beispiel die Methode <code>drive</code> auf der Instanz <code>$veh</code> über <code>$veh-&gt;drive()</code> ausgeführt.</p>
+<p>Mit dem Schlüsselwort <code>new</code> können Klasseninstanzen erzeugt werden. Über die Variable <code>$this</code> kann innerhalb der Klasse auf die Instanz zugegriffen werden. Zugriff auf Member der Instanz wird über <code>-&gt;</code> durchgeführt. So wird zum Beispiel die Methode <code>drive</code> auf der Instanz <code>$veh</code> über <code>$veh-&gt;drive()</code> ausgeführt.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">class</span> <span class="nc">Vehicle</span>
@@ -542,6 +698,95 @@
 
 <span class="nv">$veh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vehicle</span><span class="p">(</span><span class="s2">&quot;red&quot;</span><span class="p">);</span>
 <span class="nv">$veh</span><span class="o">-&gt;</span><span class="na">drive</span><span class="p">();</span>  <span class="c1">// red vehicle is driving!</span>
+</pre></div>
+
+
+<h2 id="magic-methods">Magic Methods</h2>
+<p>Es sind einige spezielle Methoden (magic Methods) für Klassen definiert. Die Methodennamen dieser speziellen Methoden beginnen mit <code>__</code> (zB der Konstruktur <code>__construct</code>). Eine Übersicht aller Magic Methods findet sich in der <a href="https://www.php.net/manual/en/language.oop5.magic.php">PHP Dokumentation</a>.</p>
+<h3 id="__set-und-__get">__set und __get</h3>
+<p>Für setter und getter gibt es die generischen Methoden <code>__set</code> und <code>__get</code>. Falls diese Methoden implementiert werden, werden diese für jegliches Setzen bzw. Abfragen von Objekt Attributen aufgerufen.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">Product</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$name</span><span class="p">;</span>
+    <span class="k">protected</span> <span class="nv">$price</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="fm">__set</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$name</span> <span class="o">==</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span> <span class="nv">$value</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$name</span> <span class="o">==</span> <span class="s2">&quot;price&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">price</span> <span class="o">=</span> <span class="p">(</span><span class="nx">float</span><span class="p">)</span> <span class="nv">$value</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="k">function</span> <span class="fm">__get</span><span class="p">(</span><span class="nv">$name</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$name</span> <span class="o">==</span> <span class="s2">&quot;name&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$name</span> <span class="o">==</span> <span class="s2">&quot;price&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">price</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="nv">$name</span> <span class="o">==</span> <span class="s2">&quot;vat&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">price</span> <span class="o">*</span> <span class="mf">0.2</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$product</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Product</span><span class="p">();</span>
+<span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">=</span> <span class="s2">&quot;Mein Produkt&quot;</span><span class="p">;</span>
+<span class="nv">$product</span><span class="o">-&gt;</span><span class="na">price</span> <span class="o">=</span> <span class="mf">3.99</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">name</span> <span class="o">.</span> <span class="s2">&quot;/ Preis inkl. MWSt.: &quot;</span> <span class="o">.</span> <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">vat</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+</pre></div>
+
+
+<h3 id="__invoke">__invoke</h3>
+<p>Mit der Implementierung der Methode <code>__invoke</code> kann ein Objekt wie eine Funktion genutzt werden. Der Nutzen dabei liegt darin, dass das Objekt einen internen Zustand halten kann, welcher über mehrmalige Aufrufe erhalten bleibt, siehe das Beispiel dazu:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">FunctionObject</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$internalState</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+    <span class="k">function</span> <span class="fm">__invoke</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">internalState</span><span class="o">++</span><span class="p">;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">internalState</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FunctionObject</span><span class="p">();</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$obj</span><span class="p">();</span>
+</pre></div>
+
+
+<h3 id="__tostring">__toString</h3>
+<p>Durch überschreiben der Methode <code>__toString</code> kann bestimmt werden, wie ein Objekt in einen String überführt wird. Dies ist unter anderem zu Debugging Zwecken sehr hilfreich.</p>
+<h3 id="__call">__call</h3>
+<p>Die Methode <code>__call</code> wird aufgerufen, wenn eine nicht existierende Methode auf einem Objekt aufgerufen wird.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">class</span> <span class="nc">Vehicle</span>
+<span class="p">{</span>
+    <span class="k">function</span> <span class="fm">__call</span><span class="p">(</span><span class="nv">$methodName</span><span class="p">,</span> <span class="nv">$arguments</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$methodName</span> <span class="o">==</span> <span class="s2">&quot;drive&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">&quot;Das Fahrzeug fährt</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">elseif</span><span class="p">(</span><span class="nv">$methodName</span> <span class="o">==</span> <span class="s2">&quot;break&quot;</span> <span class="o">||</span> <span class="nv">$methodName</span> <span class="o">==</span> <span class="s2">&quot;stop&quot;</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">&quot;Das Fahrzeug bremst</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="k">echo</span> <span class="s2">&quot;Diese Aktion führt zu nichts...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nv">$veh</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vehicle</span><span class="p">();</span>
+<span class="nv">$veh</span><span class="o">-&gt;</span><span class="na">drive</span><span class="p">();</span>  <span class="c1">// Das Fahrzeug fährt</span>
+<span class="nv">$veh</span><span class="o">-&gt;</span><span class="na">break</span><span class="p">();</span>  <span class="c1">// Das Fahrzeug bremst</span>
+
+<span class="nv">$veh</span><span class="o">-&gt;</span><span class="na">irgendEineMethodeMitKomischemName</span><span class="p">();</span>  <span class="c1">// Diese Aktion führt zu nichts...</span>
+<span class="nv">$veh</span><span class="o">-&gt;</span><span class="na">andereMethodeOhneNutzen</span><span class="p">();</span>            <span class="c1">// Diese Aktion führt zu nichts...</span>
 </pre></div>
 
 
@@ -579,6 +824,33 @@
 <span class="k">echo</span> <span class="nx">Car</span><span class="o">::</span><span class="na">checkWheels</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="o">?</span> <span class="s2">&quot;richtige Reifenanzahl&quot;</span> <span class="o">:</span> <span class="s2">&quot;falsche Reifenanzahl&quot;</span><span class="p">;</span>
 <span class="c1">// Ausgabe: falsche Reifenanzahl</span>
 </pre></div>
+
+
+<h2 id="traits">Traits</h2>
+<p>Mit Traits können Klassen einfach erweitert werden. Anders als über Vererbung kann eine Klasse von mehreren Traits erweitert werden. Von Traits können keine Instanzen gebildet werden sie dienen ausschließlich der Erweiterung von Klassen.</p>
+<p>Im Folgenden wird das gängige <code>Singleton</code> Design Pattern mit Hilfe eines Traits implementiert. Ein Trait wird über das Schlüsselwort <code>use</code> in die Klasse integriert:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">trait</span> <span class="nx">Singleton</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="k">static</span> <span class="nv">$instance</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">instance</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">self</span><span class="o">::</span><span class="nv">$instance</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">self</span><span class="o">::</span><span class="nv">$instance</span> <span class="o">=</span> <span class="k">new</span> <span class="k">static</span><span class="p">();</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">self</span><span class="o">::</span><span class="nv">$instance</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">class</span> <span class="nc">ExampleClass</span>
+<span class="p">{</span>
+    <span class="k">use</span> <span class="nx">Singleton</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$instance</span> <span class="o">=</span> <span class="nx">ExampleClass</span><span class="o">::</span><span class="na">instance</span><span class="p">();</span>
+</pre></div>
                 
                   
                 
@@ -614,13 +886,13 @@
           </a>
         
         
-          <a href="../../tutorials/01/" title="PHP Installation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../06/" title="Sessions und Cookies" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Weiter
                 </span>
-                PHP Installation
+                Sessions und Cookies
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

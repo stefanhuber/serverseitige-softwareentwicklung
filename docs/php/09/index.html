@@ -40,7 +40,7 @@
     
     
       
-        <title>PHP Webserver - Serverseitige Softwareentwicklung</title>
+        <title>Quellcode einbinden - Serverseitige Softwareentwicklung</title>
       
     
     
@@ -81,7 +81,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#php-webserver" tabindex="1" class="md-skip">
+      <a href="#quellcode-einbinden" tabindex="1" class="md-skip">
         Zum Inhalt
       </a>
     
@@ -107,7 +107,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                PHP Webserver
+                Quellcode einbinden
               
             </span>
           
@@ -228,10 +228,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       PHP
@@ -249,7 +251,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/01/" title="Grundlagen" class="md-nav__link">
+    <a href="../01/" title="Grundlagen" class="md-nav__link">
       Grundlagen
     </a>
   </li>
@@ -261,7 +263,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/02/" title="Arrays" class="md-nav__link">
+    <a href="../02/" title="Arrays" class="md-nav__link">
       Arrays
     </a>
   </li>
@@ -273,7 +275,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/03/" title="Superglobals" class="md-nav__link">
+    <a href="../03/" title="Superglobals" class="md-nav__link">
       Superglobals
     </a>
   </li>
@@ -285,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/04/" title="Funktionen" class="md-nav__link">
+    <a href="../04/" title="Funktionen" class="md-nav__link">
       Funktionen
     </a>
   </li>
@@ -297,7 +299,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/05/" title="OOP" class="md-nav__link">
+    <a href="../05/" title="OOP" class="md-nav__link">
       OOP
     </a>
   </li>
@@ -309,7 +311,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/06/" title="Sessions und Cookies" class="md-nav__link">
+    <a href="../06/" title="Sessions und Cookies" class="md-nav__link">
       Sessions und Cookies
     </a>
   </li>
@@ -321,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/07/" title="Errors und Exceptions" class="md-nav__link">
+    <a href="../07/" title="Errors und Exceptions" class="md-nav__link">
       Errors und Exceptions
     </a>
   </li>
@@ -333,58 +335,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../../php/08/" title="Datenbanken" class="md-nav__link">
+    <a href="../08/" title="Datenbanken" class="md-nav__link">
       Datenbanken
-    </a>
-  </li>
-
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../../php/09/" title="Quellcode einbinden" class="md-nav__link">
-      Quellcode einbinden
-    </a>
-  </li>
-
-        
-      </ul>
-    </nav>
-  </li>
-
-    
-      
-      
-      
-
-  
-
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-    
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
-    
-    <label class="md-nav__link" for="nav-3">
-      Tutorials
-    </label>
-    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
-        Tutorials
-      </label>
-      <ul class="md-nav__list" data-md-scrollfix>
-        
-        
-          
-          
-          
-
-
-  <li class="md-nav__item">
-    <a href="../01/" title="PHP Installation" class="md-nav__link">
-      PHP Installation
     </a>
   </li>
 
@@ -404,11 +356,11 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        PHP Webserver
+        Quellcode einbinden
       </label>
     
-    <a href="./" title="PHP Webserver" class="md-nav__link md-nav__link--active">
-      PHP Webserver
+    <a href="./" title="Quellcode einbinden" class="md-nav__link md-nav__link--active">
+      Quellcode einbinden
     </a>
     
       
@@ -422,36 +374,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#einfache-nutzung" class="md-nav__link">
-    Einfache Nutzung
+  <a href="#requireinclude" class="md-nav__link">
+    Require/Include
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anderer-webroot" class="md-nav__link">
-    Anderer Webroot
+  <a href="#aufbau-einer-website" class="md-nav__link">
+    Aufbau einer Website
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test" class="md-nav__link">
-    Test
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#haufige-probleme" class="md-nav__link">
-    Häufige Probleme
+  <a href="#class-autoloader" class="md-nav__link">
+    Class-Autoloader
   </a>
   
 </li>
@@ -467,13 +405,61 @@
   </li>
 
         
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
           
           
           
 
 
   <li class="md-nav__item">
-    <a href="../03/" title="PHP Konfiguration" class="md-nav__link">
+    <a href="../../tutorials/01/" title="PHP Installation" class="md-nav__link">
+      PHP Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/02/" title="PHP Webserver" class="md-nav__link">
+      PHP Webserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/03/" title="PHP Konfiguration" class="md-nav__link">
       PHP Konfiguration
     </a>
   </li>
@@ -485,7 +471,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../04/" title="Arbeiten mit SQLite" class="md-nav__link">
+    <a href="../../tutorials/04/" title="Arbeiten mit SQLite" class="md-nav__link">
       Arbeiten mit SQLite
     </a>
   </li>
@@ -553,36 +539,22 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#einfache-nutzung" class="md-nav__link">
-    Einfache Nutzung
+  <a href="#requireinclude" class="md-nav__link">
+    Require/Include
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#anderer-webroot" class="md-nav__link">
-    Anderer Webroot
+  <a href="#aufbau-einer-website" class="md-nav__link">
+    Aufbau einer Website
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#logging" class="md-nav__link">
-    Logging
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#test" class="md-nav__link">
-    Test
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#haufige-probleme" class="md-nav__link">
-    Häufige Probleme
+  <a href="#class-autoloader" class="md-nav__link">
+    Class-Autoloader
   </a>
   
 </li>
@@ -603,53 +575,54 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/edit/master/docs/tutorials/02.md" title="Seite editieren" class="md-icon md-content__icon">&#xE3C9;</a>
+                  <a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/edit/master/docs/php/09.md" title="Seite editieren" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="php-webserver">PHP Webserver</h1>
-<p>PHP liefert einen Webserver in der Standardinstallation mit. Dieser Webserver ist rein zu Entwicklungs- und Testzwecken und sollte nicht in Produktivumgebungen genutzt werden. Die grundsätzlichen Nutzungsmöglichkeiten dieses Web-Servers ist Inhalt dieses Tutorials.</p>
-<h2 id="einfache-nutzung">Einfache Nutzung</h2>
-<p>Mit der Option <code>-S &lt;Adresse&gt;:&lt;Port&gt;</code> kann der Webserver gestartet werden. Als <code>&lt;Addresse&gt;</code> kann dabei eine IP-Adresse oder einfach <code>localhost</code> angegeben werden. Als <code>&lt;Port&gt;</code> muss ein freier Port am Rechner angegeben werden (zB <code>8080</code>). Der Webserver kann innerhalb eines Ordners in der Kommandzeile gestartet werden. Der Ordner in dem der Webserver gestartet wird, fungiert dadurch als Webroot:</p>
-<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">php</span> <span class="o">-</span><span class="n">S</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
+                <h1 id="quellcode-einbinden">Quellcode einbinden</h1>
+<p>Web-Applikationen bestehen auf vielen Quellcodedateien. PHP bietet unterschiedliche Mechanismen um die entsprechenden Dateien zu einzubinden. Anders als in JAVA muss sich die Entwicklerin um das Einbinden der ensprechenden Quellcodedateien kümmern.</p>
+<h2 id="requireinclude">Require/Include</h2>
+<p>PHP bietet die Ausdrücke <code>include</code> und <code>require</code> um andere PHP-Dateien in einer PHP-Datei einzubinden. Beim Einbinden wird eine Datei nicht nur eingelesen sondern vom PHP-Interpreter auch ausgeführt. Der Unterschied von <code>include</code> zu <code>require</code> besteht darin, dass <code>include</code> nur ein Warning erzeugt und <code>require</code> einen Fehler wirft (Programm Stop), falls eine Datei nicht existiert.</p>
+<p>Des weiteren gibt es auch die Ausdrücke <code>include_once</code> und <code>require_once</code> um zu verhindern, dass eine Datei mehrfach eingebunden wird.</p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>Generell sollte der Ausdruck <code>require_once</code> zum Einbinden von Dateien verwendet werden:</p>
+<ol>
+<li>Mehrfacheinbinden der selben Datei wird unterbunden</li>
+<li>Fehler werden sichbar da es zum Programm Abbruch kommt und können von der Entwicklerin behoben werden</li>
+</ol>
+<p>Außer man will Fehlerbehandlung mit Exceptions durchführen, dann sollte <code>include_once</code> verwendet werden. <code>require_once</code> erzeugt einen <code>E_COMPILE_ERROR</code>, welcher nicht in eine Exception überführt werden kann, da dieser zur "Kompilierzeit" in der Programmausführung stattfindet.</p>
+</div>
+<h2 id="aufbau-einer-website">Aufbau einer Website</h2>
+<p>Eine Website besteht generell aus Bestandteilen die sich auf allen Unterseiten wiederfinden. Wiederverwendbare Teile können über <code>require_once</code> eingebunden werden.</p>
+<p><img alt="Grundgerüst einer Website" src="../images/09_01.png" title="Grundgerüst einer Website" /></p>
+<p>Das oben gezeigte Grundgerüst einer Website würde über folgendes PHP-Skript nachempfunden:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span> <span class="k">require_once</span> <span class="s1">&#39;header.php&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+
+<span class="x">&lt;aside&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">require_once</span> <span class="s1">&#39;sidebar.php&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;/aside&gt;</span>
+
+<span class="x">&lt;main&gt;</span>
+<span class="x">    &lt;h1&gt;News Artikel&lt;/h1&gt;</span>
+<span class="x">    &lt;p&gt;bla bla ...&lt;/p&gt;</span>
+<span class="x">&lt;/main&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">require_once</span> <span class="s1">&#39;footer.php&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x"></span>
 </pre></div>
 
 
-<p>Nachdem Start des Webserver sind alle Dateien und Ordner, welche sich im Webroot befinden über den Webbrowser abrufbar. Alle Dateien mit Suffix <code>.php</code> werden entsprechend vom PHP-Interpreter verarbeitet.</p>
-<h2 id="anderer-webroot">Anderer Webroot</h2>
-<p>Mit der Option <code>-t &lt;Webroot&gt;</code> kann ein anderer Webroot gesetzt werden. Im folgenden Beispiel würde der Webroot <code>C:\mein_webroot</code> gesetzt:</p>
-<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">php</span> <span class="o">-</span><span class="n">S</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">9000</span> <span class="o">-</span><span class="n">t</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">main_webroot</span>
-</pre></div>
-
-
-<h2 id="logging">Logging</h2>
-<p>Zum Debugging kann es nützlich sein, Log-Ausgaben auf der Kommandozeile zu überwachen. Mit der PHP-Funktion <code>error_log($message, $message_type=0)</code> können Log-Ausgaben auf der Kommandozeile gemacht werden. Wichtig dabei ist, dass <code>$message_type</code> den Wert <code>4</code> bekommt, sonst gehen die Log-Ausgaben nicht auf die Kommandozeile.</p>
+<h2 id="class-autoloader">Class-Autoloader</h2>
+<p>Eine Web-Applikation kann aus vielen Klassen bestehen. Es ist sinnvoll jede Klasse innerhalb einer eigenen Datei zu hinterlegen. Um nicht jede einzelne Klasse einzeln über einen <code>require_once</code> Aufruf einbinen zu müssen, gibt es sog. Autoloader.</p>
+<p>Ein Autoloader ist eine Funktion, welche von der PHP-Laufzeitumgebung ausgeführt wird, falls eine Klasse nicht gefunden wurde (Noch nicht eingebunden wurde!). Mit der Funktion kann das entsprechende Einbinden dann ausgeführt werden.</p>
+<p>Mittels der Funktion <code>spl_autoload_register</code> Funktion kann ein entsprechender Autoloader für die PHP-Laufzeitumgebung definiert werden (<code>spl</code> steht für Standard PHP Library).</p>
+<p>Im folgenden Beispiel wird werden alle Klassen der Applikation im Ordner <code>classes</code> abgelegt. Jede Klasse wird innerhalb einer Datei abgelegt, welche den selben Namen als die Klasse hat, jedoch komplett in Kleinbuchstaben:</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="nb">error_log</span><span class="p">(</span><span class="s2">&quot;Meine Log-Ausgabe...&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
+
+<span class="nb">spl_autoload_register</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$classname</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$filename</span> <span class="o">=</span> <span class="nb">strtolower</span><span class="p">(</span><span class="nv">$classname</span><span class="p">);</span>
+    <span class="k">require_once</span> <span class="s2">&quot;classes/&quot;</span> <span class="o">.</span> <span class="nv">$filename</span> <span class="o">.</span> <span class="s2">&quot;.php&quot;</span><span class="p">;</span>
+<span class="p">});</span>
 </pre></div>
-
-
-<h2 id="test">Test</h2>
-<p>Erstellen Sie eine Datei <code>test.php</code> innerhalb eines beliebigen Ordners. Füllen Sie die Datei mit folgendem Inhalt:</p>
-<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
-<span class="k">echo</span> <span class="s2">&quot;hello&quot;</span><span class="p">;</span>
-<span class="nb">error_log</span><span class="p">(</span><span class="s2">&quot;Log Ausgabe ...&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">);</span>
-</pre></div>
-
-
-<p>Starten Sie den Webserver über die entsprechenden Optionen auf der Kommandozeile. Öffnen Sie im Webbrowser die entsprechende URI (zB <code>http://localhost:8080/test.php</code>), die Ausgabe auf der Kommandozeile sollte demnach ein ähnliches Bild liefern:</p>
-<div class="codehilite"><pre><span></span><span class="o">&gt;</span> <span class="n">php</span> <span class="o">-</span><span class="n">S</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span>
-<span class="p">[</span><span class="n">Wed</span> <span class="n">Feb</span> <span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">28</span> <span class="mi">2020</span><span class="p">]</span> <span class="n">PHP</span> <span class="mi">7</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">2</span> <span class="n">Development</span> <span class="n">Server</span> <span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">localhost</span><span class="p">:</span><span class="mi">8080</span><span class="p">)</span> <span class="n">started</span>
-<span class="p">[</span><span class="n">Wed</span> <span class="n">Feb</span> <span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">31</span> <span class="mi">2020</span><span class="p">]</span> <span class="p">[::</span><span class="mi">1</span><span class="p">]:</span><span class="mi">52285</span> <span class="n">Accepted</span>
-<span class="p">[</span><span class="n">Wed</span> <span class="n">Feb</span> <span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">31</span> <span class="mi">2020</span><span class="p">]</span> <span class="n">Log</span> <span class="n">Ausgabe</span> <span class="p">...</span>
-<span class="p">[</span><span class="n">Wed</span> <span class="n">Feb</span> <span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">31</span> <span class="mi">2020</span><span class="p">]</span> <span class="p">[::</span><span class="mi">1</span><span class="p">]:</span><span class="mi">52285</span> <span class="p">[</span><span class="mi">200</span><span class="p">]:</span> <span class="k">GET</span> <span class="o">/</span><span class="n">test</span><span class="p">.</span><span class="n">php</span>
-<span class="p">[</span><span class="n">Wed</span> <span class="n">Feb</span> <span class="mi">12</span> <span class="mi">09</span><span class="p">:</span><span class="mi">50</span><span class="p">:</span><span class="mi">31</span> <span class="mi">2020</span><span class="p">]</span> <span class="p">[::</span><span class="mi">1</span><span class="p">]:</span><span class="mi">52285</span> <span class="n">Closing</span>
-</pre></div>
-
-
-<h2 id="haufige-probleme">Häufige Probleme</h2>
-<ul>
-<li>Es kann durchaus sein, dass der gewünschte Port belegt ist. Sollte bei der Ansicht im Webbrowser irgendetwas unklares erscheinen andere Ports versuchen (zB <code>8081</code>, <code>9000</code>, etc).</li>
-</ul>
                 
                   
                 
@@ -670,7 +643,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../01/" title="PHP Installation" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../08/" title="Datenbanken" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -679,19 +652,19 @@
                 <span class="md-footer-nav__direction">
                   Zurück
                 </span>
-                PHP Installation
+                Datenbanken
               </span>
             </div>
           </a>
         
         
-          <a href="../03/" title="PHP Konfiguration" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../../tutorials/01/" title="PHP Installation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Weiter
                 </span>
-                PHP Konfiguration
+                PHP Installation
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">

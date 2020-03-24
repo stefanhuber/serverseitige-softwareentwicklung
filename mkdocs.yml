@@ -12,10 +12,15 @@ nav:
     - 'Superglobals': 'php/03.md'
     - 'Funktionen': 'php/04.md'
     - 'OOP': 'php/05.md'
+    - 'Sessions und Cookies': 'php/06.md'
+    - 'Errors und Exceptions': 'php/07.md'
+    - 'Datenbanken': 'php/08.md'
+    - 'Quellcode einbinden': 'php/09.md'
   - 'Tutorials':
     - 'PHP Installation': 'tutorials/01.md'
     - 'PHP Webserver': 'tutorials/02.md'
     - 'PHP Konfiguration': 'tutorials/03.md'
+    - 'Arbeiten mit SQLite': 'tutorials/04.md'
   - 'Übungstutorials':
     - 'Übungsblatt 1 - Übung 0': 'exercises/01.md'
 

@@ -324,6 +324,40 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#wichtige-array-funktionen" class="md-nav__link">
+    Wichtige Array Funktionen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elemente-zahlen" class="md-nav__link">
+    Elemente zählen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existenz-prufen" class="md-nav__link">
+    Existenz prüfen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#element-loschen" class="md-nav__link">
+    Element löschen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
       
       
       
@@ -367,6 +401,54 @@
   <li class="md-nav__item">
     <a href="../05/" title="OOP" class="md-nav__link">
       OOP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06/" title="Sessions und Cookies" class="md-nav__link">
+      Sessions und Cookies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07/" title="Errors und Exceptions" class="md-nav__link">
+      Errors und Exceptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08/" title="Datenbanken" class="md-nav__link">
+      Datenbanken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09/" title="Quellcode einbinden" class="md-nav__link">
+      Quellcode einbinden
     </a>
   </li>
 
@@ -427,6 +509,18 @@
   <li class="md-nav__item">
     <a href="../../tutorials/03/" title="PHP Konfiguration" class="md-nav__link">
       PHP Konfiguration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/04/" title="Arbeiten mit SQLite" class="md-nav__link">
+      Arbeiten mit SQLite
     </a>
   </li>
 
@@ -524,6 +618,40 @@
   <a href="#iteration-durch-arrays" class="md-nav__link">
     Iteration durch Arrays
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wichtige-array-funktionen" class="md-nav__link">
+    Wichtige Array Funktionen
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#elemente-zahlen" class="md-nav__link">
+    Elemente zählen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#existenz-prufen" class="md-nav__link">
+    Existenz prüfen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#element-loschen" class="md-nav__link">
+    Element löschen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -646,6 +774,61 @@
 <span class="nv">n</span>ä<span class="nv">chster</span> <span class="nv">Eintrag</span>
 <span class="mi">0</span>: <span class="nv">index</span> <span class="mi">0</span>
 <span class="k">next</span> <span class="nv">key</span>: <span class="nv">n</span>ä<span class="nv">chster</span> <span class="nv">Eintrag</span>
+</pre></div>
+
+
+<h3 id="wichtige-array-funktionen">Wichtige Array Funktionen</h3>
+<h4 id="elemente-zahlen">Elemente zählen</h4>
+<p>Mit der Funktion <code>count</code> oder <code>sizeof</code> (als Alias) kann die Anzahl der Elemente in einem Array gezählt werden:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$arr</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;count&quot;</span><span class="p">];</span>
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$arr</span><span class="p">);</span>  <span class="c1">// 3</span>
+<span class="k">echo</span> <span class="nb">sizeof</span><span class="p">(</span><span class="nv">$arr</span><span class="p">);</span> <span class="c1">// 3</span>
+</pre></div>
+
+
+<h4 id="existenz-prufen">Existenz prüfen</h4>
+<p>Mit der Funktion <code>isset</code> kann geprüft werden, ob ein Index oder Schlüssel eines Arrays gesetzt ist (bzw. existiert). Ein Zugriff auf einen undefinierten Schlüssel oder Index würde zu einem Fehler führen.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$arr</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;key1&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value1&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;key2&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;value2&#39;</span>
+<span class="p">];</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;key1&#39;</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;key1 ist gesetzt&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;key1 ist nicht gesetzt&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$arr</span><span class="p">[</span><span class="s1">&#39;key_xyz&#39;</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;key_xyz ist gesetzt&quot;</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">echo</span> <span class="s2">&quot;key_xyz ist nicht gesetzt&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">// Ausgabe des Skripts:</span>
+<span class="c1">// key1 ist gesetzt</span>
+<span class="c1">// key_xyz ist nicht gesetzt</span>
+</pre></div>
+
+
+<h4 id="element-loschen">Element löschen</h4>
+<p>Die Funktion <code>unset</code> kann verwendet werden um einzelne Elemente eines Arrays zu löschen.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nv">$arr</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;a&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;a value&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;b&quot;</span> <span class="o">=&gt;</span> <span class="s2">&quot;b value&quot;</span>
+<span class="p">];</span>
+
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$arr</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span> <span class="c1">// 2</span>
+
+<span class="nb">unset</span><span class="p">(</span><span class="nv">$arr</span><span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]);</span>
+
+<span class="k">echo</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$arr</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span> <span class="c1">// 1</span>
 </pre></div>
                 
                   

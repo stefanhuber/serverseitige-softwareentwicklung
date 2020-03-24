@@ -1,0 +1,942 @@
+
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung">
+      
+      
+      
+        <meta name="author" content="Stefan Huber">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Errors und Exceptions - Serverseitige Softwareentwicklung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#errors-und-exceptions" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Serverseitige Softwareentwicklung" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Serverseitige Softwareentwicklung
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Errors und Exceptions
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Serverseitige Softwareentwicklung" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Serverseitige Softwareentwicklung
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      PHP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        PHP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01/" title="Grundlagen" class="md-nav__link">
+      Grundlagen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02/" title="Arrays" class="md-nav__link">
+      Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03/" title="Superglobals" class="md-nav__link">
+      Superglobals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04/" title="Funktionen" class="md-nav__link">
+      Funktionen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05/" title="OOP" class="md-nav__link">
+      OOP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06/" title="Sessions und Cookies" class="md-nav__link">
+      Sessions und Cookies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Errors und Exceptions
+      </label>
+    
+    <a href="./" title="Errors und Exceptions" class="md-nav__link md-nav__link--active">
+      Errors und Exceptions
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schweregrade-von-fehlern" class="md-nav__link">
+    Schweregrade von Fehlern
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fehler-beispiele" class="md-nav__link">
+    Fehler Beispiele
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_error" class="md-nav__link">
+    E_ERROR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_warning" class="md-nav__link">
+    E_WARNING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_notice" class="md-nav__link">
+    E_NOTICE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-reporting" class="md-nav__link">
+    Error Reporting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exception-hierarchie" class="md-nav__link">
+    Exception Hierarchie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#try-catch-blocke" class="md-nav__link">
+    Try-catch Blöcke
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handler" class="md-nav__link">
+    Error Handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-handler" class="md-nav__link">
+    Exception Handler
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08/" title="Datenbanken" class="md-nav__link">
+      Datenbanken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09/" title="Quellcode einbinden" class="md-nav__link">
+      Quellcode einbinden
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/01/" title="PHP Installation" class="md-nav__link">
+      PHP Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/02/" title="PHP Webserver" class="md-nav__link">
+      PHP Webserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/03/" title="PHP Konfiguration" class="md-nav__link">
+      PHP Konfiguration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/04/" title="Arbeiten mit SQLite" class="md-nav__link">
+      Arbeiten mit SQLite
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Übungstutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Übungstutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/01/" title="Übungsblatt 1 - Übung 0" class="md-nav__link">
+      Übungsblatt 1 - Übung 0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#schweregrade-von-fehlern" class="md-nav__link">
+    Schweregrade von Fehlern
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#fehler-beispiele" class="md-nav__link">
+    Fehler Beispiele
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#e_error" class="md-nav__link">
+    E_ERROR
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_warning" class="md-nav__link">
+    E_WARNING
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#e_notice" class="md-nav__link">
+    E_NOTICE
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-reporting" class="md-nav__link">
+    Error Reporting
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exceptions" class="md-nav__link">
+    Exceptions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exception-hierarchie" class="md-nav__link">
+    Exception Hierarchie
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#try-catch-blocke" class="md-nav__link">
+    Try-catch Blöcke
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handler" class="md-nav__link">
+    Error Handler
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exception-handler" class="md-nav__link">
+    Exception Handler
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/edit/master/docs/php/07.md" title="Seite editieren" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="errors-und-exceptions">Errors und Exceptions</h1>
+<p>PHP ist eine Programmiersprache mit einer langen Geschichte. Die Fehlerbehandlung ist daher zweigeteilt in <em>Errors</em> (im folgenden Fehler gennannt) und <em>Exceptions</em>. Fehler kommen aus der Zeit vor der Objektorientierten Programmierung und Exceptions wurden mit der Objektorientierten Programmierung eingeführt.</p>
+<p>PHP hat einen eher "lockeren" Umgang mit Fehlern im Programmablauf. PHP unterscheidet zwischen unterschiedlichen Schweregraden von Fehlern. Nicht in allen Schweregraden wird der Programmablauf gestoppt, sondern die PHP Laufzeitumgebung versucht das Programm weiter auszuführen.</p>
+<p>Eine Exception hingegen führt immer dazu, dass der Programmablauf gestoppt wird. Ein PHP-Programm kann so angepasst werden, dass Fehler in Exceptions überführt werden. Dies ist eine gängige Praxis in der modernen PHP Entwicklung (zB in Laravel oder Symfony).</p>
+<h2 id="schweregrade-von-fehlern">Schweregrade von Fehlern</h2>
+<p>PHP identifiziert die unterschiedlichen Schweregrade von Fehlern über Konstanten. Die wichtigsten sind folgende:</p>
+<ul>
+<li><code>E_ERROR</code>: Fataler Laufzeitfehler, PHP kann die Programmausführung nicht mehr fortführen und der gesamte Programmablauf wird gestoppt. <strong>Eine Exception ist immer ein <code>E_ERROR</code>!</strong></li>
+<li><code>E_WARNING</code>: Warnungen sind fehlerhaftes Programmverhalten, aber keine fatalen Laufzeitfehler, welche die Ausführung nicht stoppen.  </li>
+<li><code>E_NOTICE</code>: Hinweise welche im weiteren vielleicht zu einem fatalen Laufzeitfehler führen können.</li>
+</ul>
+<p>Alle verfügbaren Konstanten sind inder <a href="https://www.php.net/manual/en/errorfunc.constants.php">PHP Dokumentation</a> zu finden.</p>
+<h3 id="fehler-beispiele">Fehler Beispiele</h3>
+<h4 id="e_error">E_ERROR</h4>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NonExistingClass</span><span class="p">();</span>
+</pre></div>
+
+
+<p>Es wird versucht eine Instanz der Klasse <code>NonExistingClass</code> zu erzeugen. Die Klasse existiert nicht. Das Programm erzeugt einen <code>Fatal Error</code> (E_ERROR) und wird abgebrochen:</p>
+<div class="codehilite"><pre><span></span><span class="n">PHP</span> <span class="n">Fatal</span> <span class="n">error</span><span class="p">:</span>  <span class="n">Uncaught</span> <span class="n">Error</span><span class="p">:</span> <span class="k">Class</span> <span class="s1">&#39;NonExistingClass&#39;</span> <span class="k">not</span> <span class="k">found</span> <span class="k">in</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">example</span><span class="err">\</span><span class="n">error</span><span class="p">.</span><span class="n">php</span><span class="p">:</span><span class="mi">3</span>
+<span class="n">Stack</span> <span class="n">trace</span><span class="p">:</span>
+<span class="o">#</span><span class="mi">0</span> <span class="err">{</span><span class="n">main</span><span class="err">}</span>
+  <span class="n">thrown</span> <span class="k">in</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">example</span><span class="err">\</span><span class="n">error</span><span class="p">.</span><span class="n">php</span> <span class="k">on</span> <span class="n">line</span> <span class="mi">3</span>
+</pre></div>
+
+
+<h4 id="e_warning">E_WARNING</h4>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$file</span><span class="o">=</span><span class="nb">fopen</span><span class="p">(</span><span class="s2">&quot;non_existing_file.txt&quot;</span><span class="p">,</span><span class="s2">&quot;r&quot;</span><span class="p">);</span>
+</pre></div>
+
+
+<p>Das Programm wird nicht gestoppt, obwohl eine Datei eingelesen werden sollte, welche nicht existiert. Je nachdem wie die Variable <code>$file</code> weiter genutzt wird, kann das Programm natürlich in einem fatalen Fehler resultieren:</p>
+<div class="codehilite"><pre><span></span><span class="n">PHP</span> <span class="n">Warning</span><span class="p">:</span>  <span class="n">fopen</span><span class="p">(</span><span class="n">non_existing_file</span><span class="p">.</span><span class="n">txt</span><span class="p">):</span> <span class="n">failed</span> <span class="k">to</span> <span class="k">open</span> <span class="n">stream</span><span class="p">:</span> <span class="k">No</span> <span class="n">such</span> <span class="n">file</span> <span class="k">or</span> <span class="n">directory</span> <span class="k">in</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">example</span><span class="err">\</span><span class="n">error</span><span class="p">.</span><span class="n">php</span> <span class="k">on</span> <span class="n">line</span> <span class="mi">2</span>
+</pre></div>
+
+
+<h4 id="e_notice">E_NOTICE</h4>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$sum</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="nv">$a</span><span class="p">;</span>
+<span class="k">echo</span> <span class="nv">$sum</span><span class="p">;</span>
+</pre></div>
+
+
+<p>Das Programm wird nicht gestoppt, obwohl eine Variable <code>$a</code> verwendet wird, welche nicht definiert wurde. Je nachdem wie die Variable <code>$sum</code> weiter genutzt wird, kann das Programm natürlich in einem fatalen Fehler resultieren:</p>
+<div class="codehilite"><pre><span></span><span class="n">PHP</span> <span class="n">Notice</span><span class="p">:</span>  <span class="n">Undefined</span> <span class="k">variable</span><span class="p">:</span> <span class="n">a</span> <span class="k">in</span> <span class="k">C</span><span class="p">:</span><span class="err">\</span><span class="n">example</span><span class="err">\</span><span class="n">error</span><span class="p">.</span><span class="n">php</span> <span class="k">on</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="mi">3</span>
+</pre></div>
+
+
+<h2 id="error-reporting">Error Reporting</h2>
+<p>Innerhalb der <code>php.ini</code> wird über die Direktive <code>error_reporting</code> angegeben, welche Fehler ausgegeben werden sollen. Die Fehlerausgabe ist wichtig während der Entwicklungszeit jedoch im Produktivbetrieb sollten keine Fehler preisgegeben werden, da diese Informationen aus Sicherheitsgründen verborgen bleiben sollten. </p>
+<p>Innerhalb von PHP-Skripten kann der in der <code>php.ini</code> gesetzte Wert für <code>error_reporting</code> auch überschrieben werden. Dazu kann die gleichnamige Funktion <code>error_reporting</code> verwendet werden. Im folgenden wird exemplarisch gezeigt wie das Error Reporting innerhalb eins PHP-Skripts konfiguriert werden kann:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="c1">// Das gesamte Error Reporting ausschalten</span>
+<span class="nb">error_reporting</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+
+<span class="c1">// Alle Fehler werden über Error Reporting ausgegeben</span>
+<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span><span class="p">);</span>
+
+<span class="c1">// E_WARNING oder E_NOTICE Fehler ausgeben sonst alles verschweigen</span>
+<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_WARNING</span> <span class="o">|</span> <span class="nx">E_NOTICE</span><span class="p">);</span>
+
+<span class="c1">// Alle Fehler außer E_ERROR (fatale Fehler) sollen ausgegeben werden</span>
+<span class="nb">error_reporting</span><span class="p">(</span><span class="k">E_ALL</span> <span class="o">&amp;</span> <span class="o">~</span><span class="k">E_ERROR</span><span class="p">);</span>
+</pre></div>
+
+
+<h2 id="exceptions">Exceptions</h2>
+<p>Mit der Einführung der Objektorientierten Programmierung wurden auch <code>Exceptions</code> und <code>try-catch Blöcke</code> in PHP eingeführt. Die Herausforderung mit Exceptions liegt darin, dass ein Großteil der built-in PHP Funktion Fehler werfen und keine Exceptions. Neuere Objektorientierte Bestandteile der PHP Standard Library hingegen werfen Exceptions und keine Fehler.</p>
+<h3 id="exception-hierarchie">Exception Hierarchie</h3>
+<p>Die Elternklasse aller PHP Exceptions ist <code>Throwable</code>. Des weiteren gibt es eine Zweiteilung in <code>Error</code> und <code>Exception</code> Exceptions (<code>Error</code> ist eine Exception mit Klassenname <code>Error</code>). <code>Error</code> ist die Elternklasse alle PHP Fehler die intern in Exceptions überführt werden. <code>Exception</code> ist die Elternklasse aller Exceptions, für eigene Exceptions sollte man diese Klasse als Elternklasse verwenden. </p>
+<p><img alt="PHP Exception Hierarchie" src="../images/07_01.svg" title="PHP Exception Hierarchie" /></p>
+<h3 id="try-catch-blocke">Try-catch Blöcke</h3>
+<p><code>Try-catch Blöcke</code> können, wie aus anderen Programmiersprachen bekannt, verwendet werden:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">try</span>
+<span class="p">{</span>
+    <span class="c1">// Beliebiger Code, welcher in einem try-catch Block abgewickelt werden soll</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">DivisionByZeroError</span> <span class="nv">$e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ZB den Division durch 0 Fehler bearbeiten</span>
+<span class="p">}</span>
+<span class="k">catch</span><span class="p">(</span><span class="nx">ArgumentCountError</span> <span class="nv">$e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// ZB den falsche Anzahl an Funktionsargumenten Fehler bearbeiten</span>
+<span class="p">}</span>
+<span class="k">finally</span>
+<span class="p">{</span>
+    <span class="c1">// Finally wird immer ausgeführt, egal ob es sich um eine Exception handelt oder nicht...</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<h2 id="error-handler">Error Handler</h2>
+<p>Für ein PHP-Programm kann ein sog. Error Handler angegeben werden, welcher ausgeführt wird nachdem ein entsprechender Fehler aufgetreten ist. Damit kann die Entwicklerin bestimmen was beim Auftreten eines Fehlers im Programm passieren soll.</p>
+<p>An die Funktion <code>set_error_handler</code> kann eine Funktion übergeben werden, welche beim Auftreten eines Fehler ausgeführt wird. PHP übergibt das Error Handling komplett an diese eigens definierte Funktion. </p>
+<p>Die moderne Praxis überführt einen PHP Error in eine sog. <code>ErrorException</code>. Somit werden alle Fehler in fatale Laufzeitfehler überführt (<code>E_ERROR</code>), da Exceptions immer fatale Laufzeitfehler sind. </p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nb">set_error_handler</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nv">$severity</span><span class="p">,</span> <span class="nv">$message</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$line</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">throw</span> <span class="k">new</span> <span class="nx">ErrorException</span><span class="p">(</span><span class="nv">$message</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="nv">$severity</span><span class="p">,</span> <span class="nv">$file</span><span class="p">,</span> <span class="nv">$line</span><span class="p">);</span>
+<span class="p">});</span>
+</pre></div>
+
+
+<h2 id="exception-handler">Exception Handler</h2>
+<p>Analog zum Error Handler kann ein Exception Handler definiert werden. Der Exception Handler wird immer dann ausgeführt, wenn eine Exception nicht <code>getcatcht</code> wurde (Nicht über einen <code>try-catch Block</code> verarbeitet). Alle Exceptions die durch den "Rost fallen" können dadurch behandelt werden. Damit kann unter anderem sicher gestellt werden, dass keine Fehler für Benutzer sichtbar werden.</p>
+<p>Mit der Funktion <code>set_exception_handler</code> kann eine Funktion als Exception Handler übergeben werden. Die Funktion bekommt die entsprechende Exception übergeben:</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="nb">set_exception_handler</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="nx">Throwable</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// Reaktion auf Exception ...</span>
+<span class="p">});</span>
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../06/" title="Sessions und Cookies" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                Sessions und Cookies
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../08/" title="Datenbanken" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                Datenbanken
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            CC-BY-SA / Stefan Huber
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
