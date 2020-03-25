@@ -327,6 +327,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pass-by-reference-referenzparameter" class="md-nav__link">
+    Pass by reference (Referenzparameter)
+  </a>
+  
+</li>
+      
       
       
       
@@ -545,6 +552,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#pass-by-reference-referenzparameter" class="md-nav__link">
+    Pass by reference (Referenzparameter)
+  </a>
+  
+</li>
+      
       
       
       
@@ -604,6 +618,36 @@
 <span class="p">}</span>
 
 <span class="k">echo</span> <span class="nx">add</span><span class="p">(</span><span class="mf">2.555</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">);</span> <span class="c1">// ERROR: TypeError</span>
+</pre></div>
+
+
+<h2 id="pass-by-reference-referenzparameter">Pass by reference (Referenzparameter)</h2>
+<p>Einfache Datentypen und Arrays werden als Kopien an eine Funktion übergeben. Objekte werden als Referenzen an eine Funktion übergeben. Mit vorangestellten <code>&amp;</code> wird ein Parameter als Referenzen übergeben.</p>
+<p>Da einfache Datentypen als Kopien an eine Funktion übergeben werden, ändert sich durch den Funktionsaufruf der Wert der Variable <code>$x</code> nicht.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">multiply</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$multiplier</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$a</span> <span class="o">*</span> <span class="nv">$multiplier</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">multiply</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span> <span class="c1">// 10</span>
+</pre></div>
+
+
+<p>Durch das vorangestellte <code>&amp;</code> wird der Parameter <code>$a</code> zu einer Referenz. Die Variable <code>$x</code> wird als Referenz übergeben und durch den Funktionsaufruf wird der Wert der Variable <code>$x</code> abgeändert.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">function</span> <span class="nf">multiply</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$multiplier</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nv">$a</span> <span class="o">*</span> <span class="nv">$multiplier</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="nv">$x</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+<span class="nx">multiply</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
+
+<span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span> <span class="c1">// 100</span>
 </pre></div>
                 
                   
