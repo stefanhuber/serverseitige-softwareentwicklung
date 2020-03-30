@@ -16,6 +16,7 @@ nav:
     - 'Errors und Exceptions': 'php/07.md'
     - 'Datenbanken': 'php/08.md'
     - 'Quellcode einbinden': 'php/09.md'
+    - 'Arbeiten mit Projektabhängigkeiten':  'php/10.md'
   - 'Tutorials':
     - 'PHP Installation': 'tutorials/01.md'
     - 'PHP Webserver': 'tutorials/02.md'

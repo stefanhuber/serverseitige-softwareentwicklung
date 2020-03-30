@@ -1,0 +1,1027 @@
+
+
+
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung">
+      
+      
+      
+        <meta name="author" content="Stefan Huber">
+      
+      
+        <meta name="lang:clipboard.copy" content="In Zwischenablage kopieren">
+      
+        <meta name="lang:clipboard.copied" content="In Zwischenablage kopiert">
+      
+        <meta name="lang:search.language" content="de">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="Keine Suchergebnisse">
+      
+        <meta name="lang:search.result.one" content="1 Suchergebnis">
+      
+        <meta name="lang:search.result.other" content="# Suchergebnisse">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.2">
+    
+    
+      
+        <title>Arbeiten mit Projektabhängigkeiten - Serverseitige Softwareentwicklung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#arbeiten-mit-projekt-abhangigkeiten" tabindex="1" class="md-skip">
+        Zum Inhalt
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="Serverseitige Softwareentwicklung" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Serverseitige Softwareentwicklung
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Arbeiten mit Projektabhängigkeiten
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Suchbegriff eingeben
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="Serverseitige Softwareentwicklung" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Serverseitige Softwareentwicklung
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/" title="Quellcode" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      PHP
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        PHP
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../01/" title="Grundlagen" class="md-nav__link">
+      Grundlagen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../02/" title="Arrays" class="md-nav__link">
+      Arrays
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../03/" title="Superglobals" class="md-nav__link">
+      Superglobals
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../04/" title="Funktionen" class="md-nav__link">
+      Funktionen
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../05/" title="OOP" class="md-nav__link">
+      OOP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../06/" title="Sessions und Cookies" class="md-nav__link">
+      Sessions und Cookies
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../07/" title="Errors und Exceptions" class="md-nav__link">
+      Errors und Exceptions
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../08/" title="Datenbanken" class="md-nav__link">
+      Datenbanken
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../09/" title="Quellcode einbinden" class="md-nav__link">
+      Quellcode einbinden
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Arbeiten mit Projektabhängigkeiten
+      </label>
+    
+    <a href="./" title="Arbeiten mit Projektabhängigkeiten" class="md-nav__link md-nav__link--active">
+      Arbeiten mit Projektabhängigkeiten
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-abhangigkeiten" class="md-nav__link">
+    Projekt Abhängigkeiten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bezeichnung-von-abhangigkeiten" class="md-nav__link">
+    Bezeichnung von Abhängigkeiten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versionierung-von-abhangigkeiten" class="md-nav__link">
+    Versionierung von Abhängigkeiten
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionsangabe" class="md-nav__link">
+    Versionsangabe
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exakte-versionsionsangabe" class="md-nav__link">
+    Exakte Versionsionsangabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angabe-einer-range" class="md-nav__link">
+    Angabe einer Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-oder-von-bis-angabe" class="md-nav__link">
+    Wildcard oder Von-Bis Angabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ahnliche-versionen" class="md-nav__link">
+    Ähnliche Versionen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kompatible-versionen" class="md-nav__link">
+    Kompatible Versionen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funktionsweise-von-composer" class="md-nav__link">
+    Funktionsweise von Composer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composer-konfigurationsdatei" class="md-nav__link">
+    Composer Konfigurationsdatei
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-von-composer" class="md-nav__link">
+    Installation von Composer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutzung-von-composer" class="md-nav__link">
+    Nutzung von Composer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abhangigkeiten-hinzufugen" class="md-nav__link">
+    Abhängigkeiten hinzufügen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abhangigkeiten-installieren" class="md-nav__link">
+    Abhängigkeiten installieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-der-abhangigkeiten" class="md-nav__link">
+    Update der Abhängigkeiten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Tutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Tutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/01/" title="PHP Installation" class="md-nav__link">
+      PHP Installation
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/02/" title="PHP Webserver" class="md-nav__link">
+      PHP Webserver
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/03/" title="PHP Konfiguration" class="md-nav__link">
+      PHP Konfiguration
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../tutorials/04/" title="Arbeiten mit SQLite" class="md-nav__link">
+      Arbeiten mit SQLite
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Übungstutorials
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Übungstutorials
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../exercises/01/" title="Übungsblatt 1 - Übung 0" class="md-nav__link">
+      Übungsblatt 1 - Übung 0
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Inhaltsverzeichnis</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#projekt-abhangigkeiten" class="md-nav__link">
+    Projekt Abhängigkeiten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bezeichnung-von-abhangigkeiten" class="md-nav__link">
+    Bezeichnung von Abhängigkeiten
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#versionierung-von-abhangigkeiten" class="md-nav__link">
+    Versionierung von Abhängigkeiten
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#semantic-versioning" class="md-nav__link">
+    Semantic Versioning
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#versionsangabe" class="md-nav__link">
+    Versionsangabe
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exakte-versionsionsangabe" class="md-nav__link">
+    Exakte Versionsionsangabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#angabe-einer-range" class="md-nav__link">
+    Angabe einer Range
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wildcard-oder-von-bis-angabe" class="md-nav__link">
+    Wildcard oder Von-Bis Angabe
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ahnliche-versionen" class="md-nav__link">
+    Ähnliche Versionen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kompatible-versionen" class="md-nav__link">
+    Kompatible Versionen
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#funktionsweise-von-composer" class="md-nav__link">
+    Funktionsweise von Composer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#composer-konfigurationsdatei" class="md-nav__link">
+    Composer Konfigurationsdatei
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-von-composer" class="md-nav__link">
+    Installation von Composer
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nutzung-von-composer" class="md-nav__link">
+    Nutzung von Composer
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abhangigkeiten-hinzufugen" class="md-nav__link">
+    Abhängigkeiten hinzufügen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abhangigkeiten-installieren" class="md-nav__link">
+    Abhängigkeiten installieren
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-der-abhangigkeiten" class="md-nav__link">
+    Update der Abhängigkeiten
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stefanhuber/serverseitige-softwareentwicklung/edit/master/docs/php/10.md" title="Seite editieren" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="arbeiten-mit-projekt-abhangigkeiten">Arbeiten mit Projekt-Abhängigkeiten</h1>
+<h2 id="projekt-abhangigkeiten">Projekt Abhängigkeiten</h2>
+<p>Web-Applikationen werden meist nicht komplett "from scratch" programmiert. Bestehende externe Bibliotheken oder Frameworks werden innerhalb der Applikation genutzt. Diese externen Bibliotheken nennt man Projekt-Abhängigkeiten und müssen im Projekt verwaltet werden.</p>
+<p>Für alle Programmiersprachen gibt es entsprechende Programme, welche die Verwaltung der Abhängigkeiten bewerkstelligen. Bekannt sind unter anderem <code>npm</code> für <code>javascript</code>, <code>gradle</code> für <code>java</code> oder <code>pip</code> für <code>python</code>. Für PHP gibt es <code>composer</code>.</p>
+<h2 id="bezeichnung-von-abhangigkeiten">Bezeichnung von Abhängigkeiten</h2>
+<p>EntwicklerInnen oder Firmen können PHP-Bibliotheken als Open Source Software veröffentlichen und zur Installation über Composer bereitstellen. Die entsprechenden Bibliotheken können auf <a href="https://packagist.org/">Packagist</a> veröffentlicht werden und somit in eigene Projekte integriert werden.</p>
+<p>Den <a href="https://packagist.org/statistics">Statistiken</a> ist zu entnehmen das ca. 260.000 Bibliotheken auf Packagist veröffentlicht sind. Damit Bibliotheken eindeutig identifizierbar sind und damit es zu keinen Namenskonflikten kommt, wird ein Bezeichnungsschema benötigt.</p>
+<p>Composer Projekte werden mit einem <em>Vendorname</em> und einem <em>Projektname</em> eindeutig bezeichnet. ZB hat Facebook eine PHP-Bibliothek veröffentlicht um mit PHP-Anwendungen die Facebook Graph API abzufragen: <code>facebook/graph-sdk</code>. Dabei ist <code>facebook</code> als Vendorname und <code>graph-sdk</code> als Projektname zu verstehen.</p>
+<h2 id="versionierung-von-abhangigkeiten">Versionierung von Abhängigkeiten</h2>
+<p>Software Bibliotheken werden kontinuierlich neu veröffentlicht. Der Grund dafür können zum Beispiel neue Features oder aber auch Bugfixes sein. Für Nutzer einer Bibliothek ist es wichtig zu wissen, ob neue Veröffentlichungen einer Bibliothek einfach einzubinden sind oder ob diese langwierige API-Änderungen zur Folge haben.</p>
+<h3 id="semantic-versioning">Semantic Versioning</h3>
+<p>Software sollte nach dem Prinzip des <a href="https://semver.org/"><em>Semantic Versioning</em></a> versioniert werden. Dies geschieht auch für viele Projekte, welche über Composer bereitgestellt werden. Im Folgenden sollen die Konzepte des Semantic Versioning kurz zusammengefasst werden:</p>
+<ul>
+<li>Eine Versionsnummer besteht aus 3 Bestandteilen <code>X.Y.Z</code>, dabei ist <code>X</code> die Major-Version, <code>Y</code> die Minor-Version und <code>Z</code> die Patch-Version.</li>
+<li>Eine Major-Version definiert eine öffentliche API der Bibliothek, welche bei Änderungen der Minor- oder Patch-Version keine <code>Breaking Changes</code> erfährt. Zum Beispiel würde der Release <code>2.1.0</code> als Nachfolger von <code>2.0.21</code> für Nutzer der Bibliothek keine Änderung bedeuten.</li>
+<li>Eine Minor-Version wird erhöht, wenn neue Funktionen zur Bibliothek hinzukommen. Die öffentliche API der Bibliothek erfährt keine Änderungen, welche die Rückwärtskombatibilität beeinträchtigen. Es werden nur neue Funktionen hinzugefügt, die bestehende API bleibt identischt.</li>
+<li>Eine Patch-Version wird erhöht, falls Bugfixes oder interne Änderungen an der Bibliothek durchgeführt wurden. Die öffentliche API wird in keinster Weise abgeändert.</li>
+<li>Es gibt die Möglichkeit sog. Pre-Releases durchzuführen, diese werden über einen mit Bindestrich angegebenen Bezeichner angegeben. Zum Beispiel kann eine Alpha- oder Beta-Version einer Bibliothek veröffentlicht werden: <code>1.0.0-alpha</code> oder <code>1.0.0-beta</code>.</li>
+</ul>
+<h3 id="versionsangabe">Versionsangabe</h3>
+<p>Die Version einer Abhängigkeit kann über unterschiedliche Varianten angegeben werden. Um nach Möglichkeit auch gültige zukünftige Versionen von Bibliotheken zu spezifizieren können Range-Angaben verwendet werden.</p>
+<h4 id="exakte-versionsionsangabe">Exakte Versionsionsangabe</h4>
+<p>Eine exakte Versionsangabe bedeutet, dass nur genau diese Version verwendet werden soll und keine andere.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>1.0.5</code>: Bedeutet exakt diese Version und keine andere</li>
+<li><code>2.2.2</code>: Bedeutet exakt diese Version und keine andere</li>
+</ul>
+<h4 id="angabe-einer-range">Angabe einer Range</h4>
+<p>Durch Vergleichsoperatoren (<code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>!=</code>) können Ranges definiert werden. Zusätzlich können auch logische Operationen verwendet werden um mehrere Range Definitionen zu verknüpfen. Dabei ist mit Leerraum oder Beistrich (<code></code> oder <code>,</code>) ein logisches Und definiert und mit <code>||</code> ein logisches Oder definiert.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>&gt;=1.0 &lt;2.0</code>: Ein Range innerhalb der Version mit mindestens <code>1.0</code> und kleiner <code>2.0</code>. Zum Beispiel also <code>1.0.8</code>, <code>1.11.45</code> oder <code>1.0.0</code>.</li>
+<li><code>&gt;1.1 &lt;=2.1 || &gt;=3</code>: Der Range ab <code>1.2.0</code> bis <code>2.1.0</code> oder ab Version <code>3.0.0</code>.</li>
+</ul>
+<h4 id="wildcard-oder-von-bis-angabe">Wildcard oder Von-Bis Angabe</h4>
+<p>Zur Vereinfachung von Versionrange Angaben kann der Wildcard-Operator oder eine Von-Bis Angabe durchgeführt werden.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>2.1.*</code>: Gleichbedeutend zu <code>&gt;=2.1 &lt;2.2</code></li>
+<li><code>1.*</code>: Gleichbedeutend zu <code>&gt;=1 &lt;2</code></li>
+<li><code>1.0 - 2.0</code>: Gleichbedeutend zu <code>&gt;=1.0.0 &lt;2.1</code></li>
+<li><code>1.0.0 - 2.1.0</code>: Gleichbedeutend zu <code>&gt;=1.0.0 &lt;=2.1.0</code></li>
+</ul>
+<h4 id="ahnliche-versionen">Ähnliche Versionen</h4>
+<p>Mit <code>~</code> können ähnliche Versionen ohne die Minor-Version zu erhöhen angegeben werden.</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>~1.2.3</code>: Gleichbedeutend zu <code>&gt;=1.2.3 &lt;1.3.0</code></li>
+<li><code>~2.1.1</code>: Gleichbedeutend zu <code>&gt;=2.1.1 &lt;2.2.0</code></li>
+</ul>
+<h4 id="kompatible-versionen">Kompatible Versionen</h4>
+<p>Mit <code>^</code> können kompatible Versionen angegeben werden (Major-Version bleibt gleich).</p>
+<p>Beispiele:</p>
+<ul>
+<li><code>^1.2.3</code>: Gleichbedeutend zu <code>&gt;=1.2.3 &lt;2</code></li>
+<li><code>^2.1.1</code>: Gleichbedeutend zu <code>&gt;=2.1.1 &lt;3</code></li>
+</ul>
+<h2 id="funktionsweise-von-composer">Funktionsweise von Composer</h2>
+<p>Composer ist ein Kommandozeilenprogramm, dass es ermöglicht Projekt-Abhängigkeiten aufzulösen und entsprechende Bibliotheken lokal im Projekt zu installieren. Entsprechende Bibliotheken werden innerhalb des Ordners <code>vendor</code> im Hauptverzeichnis des Projektes hinterlegt.</p>
+<p>Für alle Klassen der installierten Bibliotheken wird ein Autoloader definiert (siehe <a href="../09/#class-autoloader">Class-Autoloader</a>). Nur dieser generierte Autoloader muss eingebunden werden um die installierten Bibliotheken zu nutzen. Dieser befindet sich in der Datei <code>vendor/autoload.php</code>:</p>
+<p>Alle Abhängigkeiten werden in der Datei <code>composer.json</code>, über Name und Version, abgelegt. Dabei wird zwischen Projekt-Abhängigkeiten (<code>require</code>) und Abhängigkeiten für die Entwicklungszeit (<code>require-dev</code>) unterschieden.</p>
+<h2 id="composer-konfigurationsdatei">Composer Konfigurationsdatei</h2>
+<p>Ein Projekt, welches über Composer verwaltet wird, hat eine <code>composer.json</code> Datei im Hauptverzeichnis des Projektes. Diese JSON-Datei enthält unter anderem eine Aufschlüsselung über alle Abhängigkeiten des Projektes. Im der unten angeführten Datei <code>composer.json</code>, werden zwei Projekt-Abhängigkeiten und eine Entwicklungsabhängigkeit definiert:</p>
+<div class="codehilite"><pre><span></span><span class="p">{</span>
+    <span class="nt">&quot;require&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;monolog/monolog&quot;</span><span class="p">:</span> <span class="s2">&quot;^2.0.2&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;facebook/graph-sdk&quot;</span><span class="p">:</span> <span class="s2">&quot;^5.7.0&quot;</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;require-dev&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;phpunit/phpunit&quot;</span><span class="p">:</span> <span class="s2">&quot;^9.0.1&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Um die Replizierbarkeit des Verhaltens eines Software-Projektes zu gewährleisten, müssen die exakten Versionen der installierten Bibliotheken dokumentiert werden. Dies geschieht über die Datei <code>composer.lock</code>. Diese Datei wird ausschließlich von der Composer erzeugt und sollte in keinem Falle manuell editiert werden.</p>
+<p>Innerhalb der Datei <code>composer.json</code> können viele weitere Projekteigenschaften definiert werden. Eine umfassende Dokumentation darüber befindet sich in der Dokumentation über das <a href="https://getcomposer.org/doc/04-schema.md">JSON-Schema</a>.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Innerhalb eines Version-Control Systems (VCS) wie zB Git sollen ausschließlich die Dateien <code>composer.json</code> bzw. <code>composer.lock</code> verwaltet werden. In keinem Fall soll der <code>vendor</code> Ordner mit dem Quellcode der Abhängigkeiten im VCS getrackt werden. Alle EntwicklerInnen können über Composer alle Abhängigkeiten jederzeit installieren, deshalb gibt es keinen Grund diese ins VCS zu integrieren.</p>
+</div>
+<h2 id="installation-von-composer">Installation von Composer</h2>
+<p>Composer kann über einen Windows-Installer installiert werden. Dieser kann über die <a href="https://getcomposer.org/doc/00-intro.md#installation-windows">Composer Website</a> heruntergeladen werden. Für MacOS oder Linux gibt es entsprechende <a href="https://getcomposer.org/doc/00-intro.md#installation-linux-unix-macos">Installationsanleitungen</a>.</p>
+<h2 id="nutzung-von-composer">Nutzung von Composer</h2>
+<p>Composer ist ein Kommandozeilenprogramm und bietet unterschiedliche Commands zum arbeiten mit Abhängigkeiten. Eine umfassende Beschreibung der Commands findet sich in der <a href="https://getcomposer.org/doc/03-cli.md">Dokumentation</a> oder über das Command <code>composer help</code>.</p>
+<h3 id="abhangigkeiten-hinzufugen">Abhängigkeiten hinzufügen</h3>
+<p>Mit dem Command <code>require</code> werden Abhängigkeiten in die Datei <code>composer.json</code> hinzugefügt und installiert. Dabei kann über die Option <code>--dev</code> angezeigt werden, dass es sich um eine Entwicklungsabhängigkeit handelt.</p>
+<p>Abhängigkeiten können ohne Version angegeben werden, somit wird die neueste Version installiert und in die <code>composer.json</code> wird diese Version mit <code>^</code> gesetzt, um die Updatefähigkeit auf zukünftige kompatible Versionen anzugeben:</p>
+<div class="codehilite"><pre><span></span>composer require facebook/graph-sdk
+</pre></div>
+
+
+<p>Es können Abhängigkeiten natürlich auch mit einer entsprechenden Versionsangabe installiert werden:</p>
+<div class="codehilite"><pre><span></span>composer require <span class="s2">&quot;facebook/graph-sdk:&gt;=5.7 &lt;6&quot;</span>
+</pre></div>
+
+
+<h3 id="abhangigkeiten-installieren">Abhängigkeiten installieren</h3>
+<p>Mit dem Command <code>install</code> werden alle Abhängigkeiten, welche innerhalb der <code>composer.json</code> definiert sind aufgelöst und lokal im Ordner <code>vendor</code> installiert. Dabei wird auch eine <code>composer.lock</code> Datei erzeugt, welche eine exakte Dokumentation über die installierten Versionen der Abhängigkeiten führt.</p>
+<div class="codehilite"><pre><span></span>composer install
+</pre></div>
+
+
+<h3 id="update-der-abhangigkeiten">Update der Abhängigkeiten</h3>
+<p>Mit dem Command <code>update</code> wird versucht alle Abhängigkeiten, unter Berücksichtigung der Range Angabe der Versionen, auf den neuesten Stand zu bringen. Dabei wird auch die Datei <code>composer.lock</code> entsprechend angepasst.</p>
+<div class="codehilite"><pre><span></span>composer update
+</pre></div>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../09/" title="Quellcode einbinden" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Zurück
+                </span>
+                Quellcode einbinden
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../tutorials/01/" title="PHP Installation" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Weiter
+                </span>
+                PHP Installation
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            CC-BY-SA / Stefan Huber
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.c648116f.js"></script>
+      
+        
+        
+          
+          <script src="../../assets/javascripts/lunr/lunr.stemmer.support.js"></script>
+          
+            
+              
+              
+                <script src="../../assets/javascripts/lunr/lunr.de.js"></script>
+              
+            
+          
+          
+        
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

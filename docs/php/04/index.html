@@ -334,6 +334,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+      
       
       
       
@@ -401,6 +408,18 @@
   <li class="md-nav__item">
     <a href="../09/" title="Quellcode einbinden" class="md-nav__link">
       Quellcode einbinden
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../10/" title="Arbeiten mit Projektabhängigkeiten" class="md-nav__link">
+      Arbeiten mit Projektabhängigkeiten
     </a>
   </li>
 
@@ -559,6 +578,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+      
       
       
       
@@ -622,8 +648,8 @@
 
 
 <h2 id="pass-by-reference-referenzparameter">Pass by reference (Referenzparameter)</h2>
-<p>Einfache Datentypen und Arrays werden als Kopien an eine Funktion übergeben. Objekte werden als Referenzen an eine Funktion übergeben. Mit vorangestellten <code>&amp;</code> wird ein Parameter als Referenzen übergeben.</p>
-<p>Da einfache Datentypen als Kopien an eine Funktion übergeben werden, ändert sich durch den Funktionsaufruf der Wert der Variable <code>$x</code> nicht.</p>
+<p>Einfache Datentypen und Arrays werden als Kopien an eine Funktion übergeben. Objekte werden als Referenzen an eine Funktion übergeben. Mit vorangestellten <code>&amp;</code> wird jeglicher Parameter als Referenz übergeben.</p>
+<p>Da einfache Datentypen als Kopien an eine Funktion übergeben werden, ändert sich durch den Funktionsaufruf der Wert der äußeren Variable <code>$x</code> nicht.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">function</span> <span class="nf">multiply</span><span class="p">(</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$multiplier</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
@@ -637,7 +663,7 @@
 </pre></div>
 
 
-<p>Durch das vorangestellte <code>&amp;</code> wird der Parameter <code>$a</code> zu einer Referenz. Die Variable <code>$x</code> wird als Referenz übergeben und durch den Funktionsaufruf wird der Wert der Variable <code>$x</code> abgeändert.</p>
+<p>Durch das vorangestellte <code>&amp;</code> wird der Parameter <code>$a</code> zu einer Referenz. Die Variable <code>$x</code> wird als Referenz übergeben und durch den Funktionsaufruf wird der Wert der äußeren Variable <code>$x</code> abgeändert.</p>
 <div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
 
 <span class="k">function</span> <span class="nf">multiply</span><span class="p">(</span><span class="o">&amp;</span><span class="nv">$a</span><span class="p">,</span> <span class="nv">$multiplier</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span> <span class="p">{</span>
@@ -648,6 +674,35 @@
 <span class="nx">multiply</span><span class="p">(</span><span class="nv">$x</span><span class="p">);</span>
 
 <span class="k">echo</span> <span class="nv">$x</span><span class="p">;</span> <span class="c1">// 100</span>
+</pre></div>
+
+
+<h2 id="scope">Scope</h2>
+<p>Funktionen definieren einen <em>lokalen Scope</em> der alle Variablen beinhaltet, welche innerhalb der Funktion definiert werden. Alle äußeren (globalen) Variablen sind nicht Teil des inneren (lokalen) Scopes und deshalb innerhalb der Funktion nicht nutzbar (default).</p>
+<p>Die globale Variable <code>$a</code> ist innerhalb des lokalen Scopes der Funktion nicht nutzbar. Somit prodziert die Addition den Wert <code>10</code>, da <code>$a</code> im inneren Scope nicht initialisiert wurde.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="nf">sum</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">echo</span> <span class="nv">$a</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span> 
+
+<span class="nx">sum</span><span class="p">();</span> <span class="c1">// Ausgabe: 10</span>
+</pre></div>
+
+
+<p>Alle Variablen, welche innerhalb des inneren Scopes in einer Funktion genutzt werden sollen und im äußeren Scope definiert wurden, müssen über das Schlüsselwort <code>global</code> eingebunden werden.</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?php</span>
+<span class="nv">$a</span> <span class="o">=</span> <span class="mi">10</span><span class="p">;</span>
+
+<span class="k">function</span> <span class="nf">sum</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">global</span> <span class="nv">$a</span><span class="p">;</span>
+    <span class="k">echo</span> <span class="nv">$a</span> <span class="o">+</span> <span class="mi">10</span><span class="p">;</span>
+<span class="p">}</span> 
+
+<span class="nx">sum</span><span class="p">();</span> <span class="c1">// Ausgabe: 20</span>
 </pre></div>
                 
                   
