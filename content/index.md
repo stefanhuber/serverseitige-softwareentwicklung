@@ -11,6 +11,7 @@
  - [Errors und Exceptions](php/07)
  - [Arbeiten mit Datenbanken](php/08)
  - [Quellcode einbinden](php/09)
+ - [Arbeiten mit Projekt-Abhängigkeiten](php/10)
  
 ## Tutorials
 
