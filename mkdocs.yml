@@ -2,7 +2,7 @@ site_name: Serverseitige Softwareentwicklung
 site_description: Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung
 site_author: Stefan Huber
 
-repo_url: https://github.com/stefanhuber/serverseitige-softwareentwicklung
+repo_url: https://github.com/stefanhuber/Serverseitige-Softwareentwicklung
 
 nav:
   - 'Home': 'index.md'
@@ -28,6 +28,10 @@ nav:
 theme:
   name: material
   language: de
+  features:
+    - tabs
+  icon:
+    logo: fontawesome/solid/server
 
 copyright: 'CC-BY-SA / Stefan Huber'
 
