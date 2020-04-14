@@ -3,9 +3,10 @@ site_description: Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklu
 site_author: Stefan Huber
 
 repo_url: https://github.com/stefanhuber/Serverseitige-Softwareentwicklung
+edit_uri: https://github.com/stefanhuber/Serverseitige-Softwareentwicklung
 
 nav:
-  - 'Home': 'index.md'
+  - Home: 'index.md'
   - 'PHP':
     - 'Grundlagen': 'php/01.md'
     - 'Arrays': 'php/02.md'
@@ -17,11 +18,21 @@ nav:
     - 'Datenbanken': 'php/08.md'
     - 'Quellcode einbinden': 'php/09.md'
     - 'Arbeiten mit Projektabhängigkeiten':  'php/10.md'
+  - 'Regex':
+    - 'Einführung': 'regex/einführung.md'
+    - 'Zeichenklassen': 'regex/zeichenklassen.md'
+    - 'Wiederholungen': 'regex/wiederholungen.md'
+    - 'Gruppierungen': 'regex/gruppierungen.md'
+    - 'Alternative': 'regex/alternative.md'
+    - 'Anker und Wortgrenzen': 'regex/anker-und-wortgrenzen.md'
+    - 'Modifikationen': 'regex/modifikationen.md'
+    - 'Beispiele': 'regex/beispiele.md'
+    - 'Nutzung mit PHP': 'regex/nutzung-mit-php.md'    
   - 'Tutorials':
     - 'PHP Installation': 'tutorials/01.md'
     - 'PHP Webserver': 'tutorials/02.md'
     - 'PHP Konfiguration': 'tutorials/03.md'
-    - 'Arbeiten mit SQLite': 'tutorials/04.md'
+    - 'Arbeiten mit SQLite': 'tutorials/04.md'  
   - 'Übungstutorials':
     - 'Übungsblatt 1 - Übung 0': 'exercises/01.md'
 
@@ -43,8 +54,12 @@ extra:
     language: de
 
 markdown_extensions:
-  - codehilite
-  - admonition
+  - markdown.extensions.admonition
+  - markdown.extensions.codehilite:
+      guess_lang: false
 
 plugins:
   - search
+  - minify:
+      minify_html: true
+  

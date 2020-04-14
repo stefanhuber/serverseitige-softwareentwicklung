@@ -12,7 +12,19 @@
  - [Arbeiten mit Datenbanken](php/08)
  - [Quellcode einbinden](php/09)
  - [Arbeiten mit Projekt-Abhängigkeiten](php/10)
- 
+
+## Regex
+
+ - [Einführung](regex/einführung)
+ - [Zeichenklassen](regex/zeichenklassen)
+ - [Wiederholungen](regex/wiederholungen)
+ - [Gruppierungen](regex/gruppierungen)
+ - [Alternative](regex/alternative)
+ - [Anker und Wortgrenzen](regex/anker-und-wortgrenzen)
+ - [Modifikationen](regex/modifikationen)
+ - [Beispiele](regex/beispiele)
+ - [Nutzung mit PHP](regex/nutzung-mit-php)
+
 ## Tutorials
 
  - [PHP Installation](tutorials/01)
