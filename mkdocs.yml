@@ -28,7 +28,7 @@ nav:
     - 'Modifikationen': 'regex/modifikationen.md'
     - 'Beispiele': 'regex/beispiele.md'
     - 'Nutzung mit PHP': 'regex/nutzung-mit-php.md'
-  - 'Webserver':
+  - 'Web-Server':
     - 'Einführung': 'webserver/einführung.md'
     - 'Wichtige Funktionen': 'webserver/funktionen.md'
     - 'Nginx Nutzung': 'webserver/nginx-nutzung.md'

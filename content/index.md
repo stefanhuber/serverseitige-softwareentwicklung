@@ -25,6 +25,14 @@
  - [Beispiele](regex/beispiele)
  - [Nutzung mit PHP](regex/nutzung-mit-php)
 
+## Web-Server
+
+ - [Einführung](webserver/einführung)
+ - [Wichtige Funktionen](webserver/funktionen)
+ - [Nginx Nutzung](webserver/nginx-nutzung)
+ - [Nginx Konfiguration](webserver/nginx-konfiguration)
+ - [WebSockets](webserver/websockets)
+
 ## Tutorials
 
  - [PHP Installation](tutorials/01)
