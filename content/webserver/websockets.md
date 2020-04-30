@@ -92,7 +92,7 @@ class Chat implements MessageComponentInterface
 
 Durch die Web-Server Architektur von Nginx werden `WebSockets` unterstützt. Innerhalb eines bereitgestellten [`Git-Repository`](https://github.com/stefanhuber/simple-websocket-demo) wurde ein Chat mittels `WebSockets` implementiert.
 
-Das Projet besteht aus einer `index.html`, welche unter anderem den notwendigen JavaScript Code für die `WebSocket` Anbindung am Client enthält. Ebenfalls findet sich eine Implementierung `MessageComponentInterface` in PHP für die serverseitige Implementierung des Chats. Dises Programm wird als PHP Dienst am Web-Server gestartet.
+Das Projet besteht aus einer `index.html`, welche unter anderem den notwendigen JavaScript Code für die `WebSocket` Anbindung am Client enthält. Ebenfalls findet sich eine Implementierung `MessageComponentInterface` in PHP für die serverseitige Implementierung des Chats. Dieses Programm wird als PHP Dienst am Web-Server gestartet.
 
 Für das Projekt werden 2 Domänen benötigt. Einerseits die Domain `chat.local`, welche die `index.html` Datei über das HTTP-Protokoll ausliefert. Andererseits die Domain `socket.chat.local`, welche für `WebSocket` Datenverkehr verwantwortlich ist. In der `Hosts-Datei` müssen dazu folgende Domänen ergänzt werden:
 
