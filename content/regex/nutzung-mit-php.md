@@ -45,7 +45,7 @@ Array
 
 ## Beispiel: Alle Übereinstimmungen
 
-Die Funktion `preg_match` stoppt nach auffinden der ersten Übereinstimmung im Subjekt. Durch die Funktion `preg_match_all` werden alle Übereinstimmungen im Subjekt gesucht.
+Die Funktion `preg_match` stoppt nach dem Auffinden der ersten Übereinstimmung im Subjekt. Durch die Funktion `preg_match_all` werden alle Übereinstimmungen im Subjekt gesucht.
 
 ```php
 <?php

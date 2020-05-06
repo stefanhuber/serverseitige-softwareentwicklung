@@ -35,7 +35,7 @@ Die folgende Zeichenklasse würde dabei alle Klein- und Großbuchstaben, also al
 [a-zA-Z]
 ```
 
-Eine wichtige Anmerkung dabei ist, dass Zeichen anhand des entsprechenden Zeichensatzes geordnet sind. Für Regular Expressions kommt hierbei grundsätzlich der `ASCII-Zeichensatz` zum tragen. Der ASCII-Zeichensatz besteht dabei aus 128 druckbaren und nichtdruckbaren Steuerzeichen. Die druckbaren Zeichen umfassen das lateinische Alphabet in Groß- und Kleinschreibung, die zehn arabischen Ziffern sowie einigen Sonderzeichen. Der Zeichenvorrat entspricht weitgehend dem einer Tastatur für die englische Sprache.
+Eine wichtige Anmerkung dabei ist, dass Zeichen anhand des entsprechenden Zeichensatzes geordnet sind. Für Regular Expressions kommt hierbei grundsätzlich der `ASCII-Zeichensatz` zum tragen. Der ASCII-Zeichensatz besteht dabei aus 128 druckbaren und nicht-druckbaren Steuerzeichen. Die druckbaren Zeichen umfassen das lateinische Alphabet in Groß- und Kleinschreibung, die zehn arabischen Ziffern sowie einigen Sonderzeichen. Der Zeichenvorrat entspricht weitgehend dem einer Tastatur für die englische Sprache.
 
 Die durckbaren Zeichen beginnen dabei mit dem Leerzeichen und folgen der unten angeführten Ordnung:
 
@@ -48,20 +48,20 @@ Die durckbaren Zeichen beginnen dabei mit dem Leerzeichen und folgen der unten a
 Dabei würde die Zeichenklasse `[ -~]` alle druckbaren Zeichen inkl. Leerraum des ASCII-Zeichensatzes umfassen.
 
 !!! danger "Vorsicht"
-    Um die Zeichenklasse aller Buchstaben anzugeben sollte `[a-zA-Z]` verwendet werden. Die Zeichenklasse `[A-z]` würde auch Zeichen wie `[`, `\` oder `]` enthalten. Des weiteren würde die Zeichenklasse `[a-Z]` eine leere Menge definieren, da `a` nach `Z` in der Ordnung des ASCII-Zeichensatzes auftritt.
+    Um die Zeichenklasse aller Buchstaben anzugeben sollte `[a-zA-Z]` verwendet werden. Die Zeichenklasse `[A-z]` würde auch Zeichen wie `[`, `\` oder `]` enthalten. Des Weiteren würde die Zeichenklasse `[a-Z]` eine leere Menge definieren, da `a` nach `Z` in der Ordnung des ASCII-Zeichensatzes auftritt.
 
 ## Vordefinierte Zeichenklassen
 
 Für gängige Zeichenklassen wurden Kurzformen definiert, welche anstelle einer Zeichenklassendefinition verwendet werden können.
 
-| Kurzform | Bedeutung | Zeichenklasse |
-| --- | --- | --- |
-| `\d` | Ziffern | `[0-9]` |
-| `\D` | Alles außer `\d` | `[^0-9]`, `[^\d]` |
-| `\w` | Alphanumerische Zeichen inkl. dem Unterstrich | `[a-zA-Z0-9_]` |
-| `\W` | Alles außer `\w` | `[^a-zA-Z0-9_]` |
-| `\s` | Weißraum (zB Leeraum, Tabulator, Zeilenumbruch, ...) | `[ \f\n\r\t\v]` und alle Unicodevarianten zB `\u00a0` |
-| `\S` | Alles außer `\s` | `[^\s]` |
+| Kurzform | Bedeutung                                            | Zeichenklasse                                         |
+| -------- | ---------------------------------------------------- | ----------------------------------------------------- |
+| `\d`     | Ziffern                                              | `[0-9]`                                               |
+| `\D`     | Alles außer `\d`                                     | `[^0-9]`, `[^\d]`                                     |
+| `\w`     | Alphanumerische Zeichen inkl. dem Unterstrich        | `[a-zA-Z0-9_]`                                        |
+| `\W`     | Alles außer `\w`                                     | `[^a-zA-Z0-9_]`                                       |
+| `\s`     | Weißraum (zB Leeraum, Tabulator, Zeilenumbruch, ...) | `[ \f\n\r\t\v]` und alle Unicodevarianten zB `\u00a0` |
+| `\S`     | Alles außer `\s`                                     | `[^\s]`                                               |
 
 ## Beliebiges Zeichen
 

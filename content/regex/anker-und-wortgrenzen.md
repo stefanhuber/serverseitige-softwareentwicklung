@@ -8,7 +8,7 @@ Eine Wortgrenze ist eine definierte Kurzform `\b`, welche eine Zeichenlänge 0 a
 
  - Vor dem ersten Zeichen eines Wortes
  - Nach dem letzten Zeichen eines Wortes
- - Innerhalb eines Worten, falls zB ein Bindestrich verwendet wird
+ - Innerhalb eines Wortes, falls zB ein Bindestrich verwendet wird
 
 Mit dem folgenden Beispiel werden alle Wörter identifiziert, welche ein scharfes ß in der Schreibweise enthalten.
 

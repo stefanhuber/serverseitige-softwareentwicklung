@@ -2,7 +2,7 @@
 
 `WebSockets` sind `Client-initiierte` `persistente` `full-duplex` Kommunikationskanäle zwischen Web-Browser und Web-Server.
 
-Der Web-Browser initiert den `WebSocket` über einen sog. WebSocket Handshake Request. Falls der Web-Server das `WebSocket Protokoll` unterstützt antwortet dieser mit einem `101 Status` und die bestehende TCP-Verbindung wird für den `WebSocket` verwendet.
+Der Web-Browser initiiert den `WebSocket` über einen sog. WebSocket Handshake Request. Falls der Web-Server das `WebSocket Protokoll` unterstützt antwortet dieser mit einem `101 Status` und die bestehende TCP-Verbindung wird für den `WebSocket` verwendet.
 
 Der Web-Browser würde beispielsweise folgenden HTTP-Request als `WebSocket Handshake Request` an den Web-Server senden:
 
@@ -23,7 +23,7 @@ Upgrade: websocket
 Connection: Upgrade
 ```
 
-Der Status `101` würde hier bedeuten, dass das HTTP-Protkoll gewechselt wird und entsprechende das `WebSocket-Protokoll` verwendet wird.
+Der Status `101` würde hier bedeuten, dass das HTTP-Protkoll gewechselt wird und entsprechend das `WebSocket-Protokoll` verwendet wird.
 
 ## Web-Browser API
 
@@ -34,7 +34,7 @@ Es gibt unterschiedliche WebSocket Events, welche im Web-Browser eintreten könn
  - **onmessage:** Event für den Eingang einer Nachricht vom Web-Server
  - **onconnection:** Event für den erfolgreichen Verbindungsaufbau mit dem Web-Server
  - **onerror:** Event für das Auftreten eines Fehlers zum Web-Server
- - **onclose:** Event für das Schließen einer 
+ - **onclose:** Event für das Schließen einer Verbindung
 
 Die Methode `send` der `WebSocket-Connection` kann im Web-Browser genutzt werden um Nachrichten an den Web-Server zu senden.
 

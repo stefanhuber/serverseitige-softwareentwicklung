@@ -12,12 +12,12 @@ Reguläre Ausdrücke werden zum _Pattern Matching_ verwendet. Dabei wird das Mus
 
 ## Erstes Beispiel und wichtige Begriffe
 
-Eine Zeichenkette (im Kontext von Regex wird diese _Subjekt_ genannt) soll nach dem Muster `abc` durchsucht werden und alle Position an denen das Muster vorkommt sollen ermittelt werden:
+Eine Zeichenkette (im Kontext von Regex wird diese _Subjekt_ genannt) soll nach dem Muster `abc` durchsucht werden und alle Positionen an denen das Muster vorkommt sollen ermittelt werden:
 
 <pre><code>abc dde abcd aabb bb aa bb
 ab9d abd abkk abkabcde</code></pre>
 
-Die _Regex Engine_, welche die Regex auf das Subjekt anwendet, geht das Subjekt Zeichen für Zeichen von links nach recht durch. An jeder Position wird geprüft, ob das Muster an der Position übereinstimmt. Falls es eine Übereinstimmung an einer Position gibt, wird diese markiert. Das Ergebnis der Regex Engine würde wie folgt aussehen:
+Die _Regex Engine_, welche die Regex auf das Subjekt anwendet, geht das Subjekt Zeichen für Zeichen von links nach rechts durch. An jeder Position wird geprüft, ob das Muster an der Position übereinstimmt. Falls es eine Übereinstimmung an einer Position gibt, wird diese markiert. Das Ergebnis der Regex Engine würde wie folgt aussehen:
 
 <pre><code><span style="text-decoration: underline">abc</span> dde <span style="text-decoration: underline">abc</span>d aabb bb aa bb
 ab9d abd abkk abk<span style="text-decoration: underline">abc</span>de</code></pre>
