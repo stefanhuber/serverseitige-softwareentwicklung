@@ -18,7 +18,7 @@
     [minutes] =&gt; 30
     [2] =&gt; 30
 )
-</code></pre></div> <h2 id=beispiel-alle-ubereinstimmungen>Beispiel: Alle Übereinstimmungen</h2> <p>Die Funktion <code>preg_match</code> stoppt nach auffinden der ersten Übereinstimmung im Subjekt. Durch die Funktion <code>preg_match_all</code> werden alle Übereinstimmungen im Subjekt gesucht.</p> <div class=codehilite><pre><span></span><code><span class=cp>&lt;?php</span>
+</code></pre></div> <h2 id=beispiel-alle-ubereinstimmungen>Beispiel: Alle Übereinstimmungen</h2> <p>Die Funktion <code>preg_match</code> stoppt nach dem Auffinden der ersten Übereinstimmung im Subjekt. Durch die Funktion <code>preg_match_all</code> werden alle Übereinstimmungen im Subjekt gesucht.</p> <div class=codehilite><pre><span></span><code><span class=cp>&lt;?php</span>
 
 <span class=nv>$regex</span> <span class=o>=</span> <span class=s1>&#39;/(?&lt;hours&gt;\d{2}):(?&lt;minutes&gt;\d{2})(?: Uhr)?/&#39;</span><span class=p>;</span>
 <span class=nv>$subject</span> <span class=o>=</span> <span class=s1>&#39;Von 07:30 bis 10:00 Uhr gibt es Frühstück und von 12:00 bis 13:30 Uhr wird das Mittagessen serviert.&#39;</span><span class=p>;</span>

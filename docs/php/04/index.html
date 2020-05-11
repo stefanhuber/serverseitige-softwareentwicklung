@@ -25,7 +25,7 @@
 <span class=p>}</span>
 
 <span class=k>echo</span> <span class=nx>add</span><span class=p>(</span><span class=mf>2.555</span><span class=p>,</span> <span class=s2>&quot;5&quot;</span><span class=p>);</span> <span class=c1>// ERROR: TypeError</span>
-</code></pre></div> <h2 id=pass-by-reference-referenzparameter>Pass by reference (Referenzparameter)</h2> <p>Einfache Datentypen und Arrays werden als Kopien an eine Funktion übergeben. Objekte werden als Referenzen an eine Funktion übergeben. Mit vorangestellten <code>&amp;</code> wird jeglicher Parameter als Referenz übergeben.</p> <p>Da einfache Datentypen als Kopien an eine Funktion übergeben werden, ändert sich durch den Funktionsaufruf der Wert der äußeren Variable <code>$x</code> nicht.</p> <div class=codehilite><pre><span></span><code><span class=cp>&lt;?php</span>
+</code></pre></div> <h2 id=pass-by-reference-referenzparameter>Pass by reference (Referenzparameter)</h2> <p>Einfache Datentypen und Arrays werden als Kopien an eine Funktion übergeben. Objekte werden als Referenzen an eine Funktion übergeben. Mit vorangestelltem <code>&amp;</code> wird jeglicher Parameter als Referenz übergeben.</p> <p>Da einfache Datentypen als Kopien an eine Funktion übergeben werden, ändert sich durch den Funktionsaufruf der Wert der äußeren Variable <code>$x</code> nicht.</p> <div class=codehilite><pre><span></span><code><span class=cp>&lt;?php</span>
 
 <span class=k>function</span> <span class=nf>multiply</span><span class=p>(</span><span class=nv>$a</span><span class=p>,</span> <span class=nv>$multiplier</span><span class=o>=</span><span class=mi>10</span><span class=p>)</span> <span class=p>{</span>
     <span class=nv>$a</span> <span class=o>*</span> <span class=nv>$multiplier</span><span class=p>;</span>
@@ -45,7 +45,7 @@
 <span class=nx>multiply</span><span class=p>(</span><span class=nv>$x</span><span class=p>);</span>
 
 <span class=k>echo</span> <span class=nv>$x</span><span class=p>;</span> <span class=c1>// 100</span>
-</code></pre></div> <h2 id=scope>Scope</h2> <p>Funktionen definieren einen <em>lokalen Scope</em> der alle Variablen beinhaltet, welche innerhalb der Funktion definiert werden. Alle äußeren (globalen) Variablen sind nicht Teil des inneren (lokalen) Scopes und deshalb innerhalb der Funktion nicht nutzbar (default).</p> <p>Die globale Variable <code>$a</code> ist innerhalb des lokalen Scopes der Funktion nicht nutzbar. Somit prodziert die Addition den Wert <code>10</code>, da <code>$a</code> im inneren Scope nicht initialisiert wurde.</p> <div class=codehilite><pre><span></span><code><span class=cp>&lt;?php</span>
+</code></pre></div> <h2 id=scope>Scope</h2> <p>Funktionen definieren einen <em>lokalen Scope</em> der alle Variablen beinhaltet, welche innerhalb der Funktion definiert werden. Alle äußeren (globalen) Variablen sind nicht Teil des inneren (lokalen) Scopes und deshalb innerhalb der Funktion nicht nutzbar (default).</p> <p>Die globale Variable <code>$a</code> ist innerhalb des lokalen Scopes der Funktion nicht nutzbar. Somit produziert die Addition den Wert <code>10</code>, da <code>$a</code> im inneren Scope nicht initialisiert wurde.</p> <div class=codehilite><pre><span></span><code><span class=cp>&lt;?php</span>
 <span class=nv>$a</span> <span class=o>=</span> <span class=mi>10</span><span class=p>;</span>
 
 <span class=k>function</span> <span class=nf>sum</span><span class=p>()</span>
