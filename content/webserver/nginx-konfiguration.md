@@ -29,7 +29,7 @@ http {
 }
 ```
 
-Bei einer `Block-Direktive` spricht man auch von einem Kontext der definiert wird. Dabei werden `einfache Direktiven` bei der Verschachtelung von `Block-Direktiven` nach Innen vererbt. Der Äußerste Kontext außerhalb einer `Block-Direktive` wird `main` oder `globaler` Kontext genannt.
+Bei einer `Block-Direktive` spricht man auch von einem Kontext der definiert wird. Dabei werden `einfache Direktiven` bei der Verschachtelung von `Block-Direktiven` nach innen vererbt. Der Äußerste Kontext außerhalb einer `Block-Direktive` wird `main` oder `globaler` Kontext genannt.
 
 Kommentare in Konfigurationsdateien können über die Raute (`#`)  durchgeführt werden. 
 
@@ -214,7 +214,7 @@ Der `Virtual Host` für die Domain `webshop.local` muss etwas angepasst werden. 
 
 Die Variable `$uri` gibt den Pfad, welcher im HTTP-Request angefragt wurde wieder. Die Direktive `try_files` innerhalb der `location` versucht ob es die Datei `$uri` im Web-Root gibt. Falls diese Datei vorhanden ist, wird sie als statische Datei zurückgegeben. Anderenfalls wird die Uri `/index.php?$query_string` ausgewählt. 
 
-Dadurch wird die wird die nächste passende `location` gesucht. Durch die Angabe von `~` wird eine Regex spezifiziert (Uri mit einer `.php` Datei). In dieser `location` wird der HTTP-Request an das CGI-Interface weitergegeben. Dort wird das PHP-Skript ausgeführt und der HTTP-Response erzeugt.
+Dadurch wird die nächste passende `location` gesucht. Durch die Angabe von `~` wird eine Regex spezifiziert (Uri mit einer `.php` Datei). In dieser `location` wird der HTTP-Request an das CGI-Interface weitergegeben. Dort wird das PHP-Skript ausgeführt und der HTTP-Response erzeugt.
 
 ```
 http {
