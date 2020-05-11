@@ -127,7 +127,7 @@ http {
 }
 ```
 
-Zum Start und zur Ausführung des Projektes müssen die Schritte in der README befolgt werden. Eine Chat-Konversation zwischen `Alice` und `Bob` würde folgendermaßen aussehen. Die ältesten Nachrichten stehen jeweils unten und `Alice` war bereits im Chatfenster als `Bob` sich einloggte:
+Zum Start und zur Ausführung des Projektes müssen die Schritte in der `README` befolgt werden. Eine Chat-Konversation zwischen `Alice` und `Bob` würde folgendermaßen aussehen. Die ältesten Nachrichten stehen jeweils unten und `Alice` war bereits im Chatfenster als `Bob` sich einloggte:
 
 <div style="display:flex">
     <img style="flex: 50% 0 0; margin:0 10px; max-width:50%;" src="../images/websocket-chat-01.png">

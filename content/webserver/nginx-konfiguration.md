@@ -133,11 +133,11 @@ location ~* \.(png|gif|ico|jpg|jpeg)$ {
 
 Im `globalen Kontext` finden sich Konfigurationen, welche den gesamten Server betreffen zum Beispiel die Anzahl der Worker Prozesse. Mit der Direktive `worker_processes` kann dies bestimmt werden. Aufgrund der Architektur von Nginx sollte innerhalb einer Produktivumgebung die Anzahl der Worker der Anzahl der CPU Kerne entsprechen (Dafür kann der Parameter `auto` verwendet werden).
 
-Wenn die Anzahl der Worker Prozesse zum Beispiel auf `2` gesetzt wird, sieht die Prozessauflistung im Windows Task-Manager in etwa so aus:
-
 ```
 worker_processes 2;
 ```
+
+Wenn die Anzahl der Worker Prozesse zum Beispiel auf `2` gesetzt wird, sieht die Prozessauflistung im Windows Task-Manager in etwa so aus:
 
 ![Nginx Worker Prozesse](images/nginx-worker-processes.png "Nginx Worker Prozesse")
 
@@ -161,10 +161,10 @@ Innerhalb der `Hosts-Datei` können folgende Einträge durchgeführt werden:
 
 Dies würde dazu führen, dass die Domains `webshop.local` und `websnap.local` beide mit der IP-Adresse `127.0.0.1` aufgelöst werden.
 
-Innerhalb der `nginx.conf` Datei können nun 2 `virtual Hosts` eingerichtet werden. Ein `virtual Host` wird innerhalb der `http` Direktive mit der `server` Direktive eingerichtet. Innerhalb der `server` Direktive werden die Direktiven `listen`, `server_name` und `root` verwendet. Die 3 Direktiven haben folgende Bedeutung:
+Innerhalb der `nginx.conf` Datei können nun 2 `Virtual Hosts` eingerichtet werden. `Virtual Hosts` werden innerhalb der `http` Direktive mit der `server` Direktive eingerichtet. Innerhalb der `server` Direktive werden die Direktiven `listen`, `server_name` und `root` verwendet. Die 3 Direktiven haben folgende Bedeutung:
 
  - `listen`: Mit `listen` wird spezifiziert auf welchem Port der `virtual Host` auf eingehende HTTP-Requests reagieren soll.
- - `server_name`: Durch `server_name` werden die Regeln für den Host-Header angegeben für den der `virtual Host` definiert wurde (siehe `Name-based Virtual Hosting`).
+ - `server_name`: Durch `server_name` werden die Regeln für den Host-Header angegeben für den der `Virtual Host` definiert wurde (siehe `Name-based Virtual Hosting`).
  - `root`: Mit `root` wird der Web-Root angegeben. Von diesem Verzeichnis aus werden Dateien vom Web-Server über den URI-Pfad identifiziert.
 
 ```
@@ -192,7 +192,7 @@ Zum Beispiel würde die Datei `C:\examples\webshop\index.html` in etwa so ausseh
 <h1>Webshop</h1>
 ```
 
-Falls Nginx gestartet und die Konfiguration neu geladen wurde, können die Websites im Web-Browser aufgerufen werden. Der Port wurde mit `9008` gewählt, da unter Windows auf Port `80` möglicherweise bereits ein Dienst läuft.
+Falls Nginx gestartet und die Konfiguration neu geladen wurde, können die Websites im Web-Browser aufgerufen werden.
 
 <div style="display:flex">
     <img style="flex: 50% 0 0; margin:0 10px; max-width:50%;" src="../images/virtual-hosting-01.png">
