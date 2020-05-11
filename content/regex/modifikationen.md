@@ -4,14 +4,14 @@
 
 ## Wichtige Modifikationen
 
-| Modifikation | Bedeutung |
-| --- | --- |
-| `i` | Case Insensitive: Groß- und Kleinschreibung wird nicht unterschieden |
-| `s` | Single Line Mode: Die Zeichenklasse `.` ist so definiert, dass der Zeilenumbruch nicht inkludiert ist (`\n`), dies wird damit aufgebohen  |
-| `m` | Multi Line Mode: Die Anker `^` und `$` beziehen sich nicht mehr auf den Start und das Ende der gesamten Zeichenkette, sondern auf den Start und das Ende einer Zeile |
-| `x` | Free-spacing Mode: Weißraum (zB Leerraum, Zeilenumbruch, Tabulator, ...) innerhalb der Regular Expression wird ignoriert, damit kann eine Regular Expression mehrzeilig (erhöhung der Lesbarkeit) erstellt werden |
+| Modifikation | Bedeutung                                                                                                                                                                                                         |
+| ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `i`          | Case Insensitive: Groß- und Kleinschreibung wird nicht unterschieden                                                                                                                                              |
+| `s`          | Single Line Mode: Die Zeichenklasse `.` ist so definiert, dass der Zeilenumbruch nicht inkludiert ist (`\n`), dies wird damit aufgebohen                                                                          |
+| `m`          | Multi Line Mode: Die Anker `^` und `$` beziehen sich nicht mehr auf den Start und das Ende der gesamten Zeichenkette, sondern auf den Start und das Ende einer Zeile                                              |
+| `x`          | Free-spacing Mode: Weißraum (zB Leerraum, Zeilenumbruch, Tabulator, ...) innerhalb der Regular Expression wird ignoriert, damit kann eine Regular Expression mehrzeilig (erhöhung der Lesbarkeit) erstellt werden |
 
-Es gibt sehr viele unterschiedliche Implementierungen von Regex Engines. Regex Engines unterschützen unterschiedliche weitere proprietäre Modifikationen.
+Es gibt sehr viele unterschiedliche Implementierungen von Regex Engines. Regex Engines unterstützen unterschiedliche weitere proprietäre Modifikationen.
 
 ## Inline Modifikation
 

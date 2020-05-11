@@ -29,7 +29,7 @@ http {
 }
 ```
 
-Bei einer `Block-Direktive` spricht man auch von einem Kontext der definiert wird. Dabei werden `einfache Direktiven` bei der Verschachtelung von `Block-Direktiven` nach Innen vererbt. Der Äußerste Kontext außerhalb einer `Block-Direktive` wird `main` oder `globaler` Kontext genannt.
+Bei einer `Block-Direktive` spricht man auch von einem Kontext der definiert wird. Dabei werden `einfache Direktiven` bei der Verschachtelung von `Block-Direktiven` nach innen vererbt. Der Äußerste Kontext außerhalb einer `Block-Direktive` wird `main` oder `globaler` Kontext genannt.
 
 Kommentare in Konfigurationsdateien können über die Raute (`#`)  durchgeführt werden. 
 
@@ -161,10 +161,10 @@ Innerhalb der `Hosts-Datei` können folgende Einträge durchgeführt werden:
 
 Dies würde dazu führen, dass die Domains `webshop.local` und `websnap.local` beide mit der IP-Adresse `127.0.0.1` aufgelöst werden.
 
-Innerhalb der `nginx.conf` Datei können nun 2 `virtual Hosts` eingerichtet werden. Ein `virtual Host` wird innerhalb der `http` Direktive mit der `server` Direktive eingerichtet. Innerhalb der `server` Direktive werden die Direktiven `listen`, `server_name` und `root` verwendet. Die 3 Direktiven haben folgende Bedeutung:
+Innerhalb der `nginx.conf` Datei können nun 2 `Virtual Hosts` eingerichtet werden. Ein `Virtual Host` wird innerhalb der `http` Direktive mit der `server` Direktive eingerichtet. Innerhalb der `server` Direktive werden die Direktiven `listen`, `server_name` und `root` verwendet. Die 3 Direktiven haben folgende Bedeutung:
 
- - `listen`: Mit `listen` wird spezifiziert auf welchem Port der `virtual Host` auf eingehende HTTP-Requests reagieren soll.
- - `server_name`: Durch `server_name` werden die Regeln für den Host-Header angegeben für den der `virtual Host` definiert wurde (siehe `Name-based Virtual Hosting`).
+ - `listen`: Mit `listen` wird spezifiziert auf welchem Port der `Virtual Host` auf eingehende HTTP-Requests reagieren soll.
+ - `server_name`: Durch `server_name` werden die Regeln für den Host-Header angegeben für den der `Virtual Host` definiert wurde (siehe `Name-based Virtual Hosting`).
  - `root`: Mit `root` wird der Web-Root angegeben. Von diesem Verzeichnis aus werden Dateien vom Web-Server über den URI-Pfad identifiziert.
 
 ```
@@ -214,7 +214,7 @@ Der `Virtual Host` für die Domain `webshop.local` muss etwas angepasst werden. 
 
 Die Variable `$uri` gibt den Pfad, welcher im HTTP-Request angefragt wurde wieder. Die Direktive `try_files` innerhalb der `location` versucht ob es die Datei `$uri` im Web-Root gibt. Falls diese Datei vorhanden ist, wird sie als statische Datei zurückgegeben. Anderenfalls wird die Uri `/index.php?$query_string` ausgewählt. 
 
-Dadurch wird die wird die nächste passende `location` gesucht. Durch die Angabe von `~` wird eine Regex spezifiziert (Uri mit einer `.php` Datei). In dieser `location` wird der HTTP-Request an das CGI-Interface weitergegeben. Dort wird das PHP-Skript ausgeführt und der HTTP-Response erzeugt.
+Dadurch wird die nächste passende `location` gesucht. Durch die Angabe von `~` wird eine Regex spezifiziert (Uri mit einer `.php` Datei). In dieser `location` wird der HTTP-Request an das CGI-Interface weitergegeben. Dort wird das PHP-Skript ausgeführt und der HTTP-Response erzeugt.
 
 ```
 http {

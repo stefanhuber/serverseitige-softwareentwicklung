@@ -5,7 +5,7 @@
 Virtual Hosting ist eine Methode um mehrere Web-Anwendungen oder Websites über einen Web-Server abzubilden. Dabei sind 2 Vorgehensweisen zu unterscheiden:
 
  - **Name-based Virtual Hosting:** Mehrere DNS-Einträge zeigen auf die selbe IP-Adresse auf der ein Web-Server ausgeführt wird. In HTTP-Requests wird der Host-Header mitgesendet. Über diesen Header kann am Web-Server der zugehörige Virtual Host ausgewählt werden. Die ist die häufigste Form von Virtual Hosting, welche auch als Shared Hosting von Providern angeboten wird.
- - **IP-based Virtual Hosting:** Ein Web-Server kann so konfiguriert sein, dass er über mehrere IP-Adressen angesprochen werden kann. Dies kann zum Beispiel über mehrer physiche Netzwerk-Interfaces oder mehreren virtuellen Netzwerk Interfaces auf dem Rechner durchgeführt werden. Je nach IP-Adresse wird ein anderer Virtual Host aktiviert. Dies ist eher einer seltener Fall im Gegensatz zum Name-based Virtual Hosting. 
+ - **IP-based Virtual Hosting:** Ein Web-Server kann so konfiguriert sein, dass er über mehrere IP-Adressen angesprochen werden kann. Dies kann zum Beispiel über mehrer physiche Netzwerk-Interfaces oder mehreren virtuellen Netzwerk Interfaces auf dem Rechner durchgeführt werden. Je nach IP-Adresse wird ein anderer Virtual Host aktiviert. Dies ist eher ein seltener Fall im Gegensatz zum Name-based Virtual Hosting. 
 
 ## Proxy
 
@@ -32,8 +32,3 @@ Das Protokoll wurde 1997 in Version 1.1 im RFC 3875 standardisiert. Das Standard
 
 !!! info "Info"
     Nginx kann Web-Anwendungen, welche mit PHP programmiert wurden, über das FastCGI Interface ausführen. Für den Apache Webserver wurde ein eigenes Modul für die Ausführung von PHP entwickelt (`mod_php`).
-
-
-
-
-
