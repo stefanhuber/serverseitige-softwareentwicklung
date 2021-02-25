@@ -2,16 +2,16 @@
 
 ## PHP
 
- - [Grundlagen](php/01)
- - [Arrays](php/02)
- - [Superglobals](php/03)
- - [Funktionen](php/04)
- - [Objektorientierte Programmierung](php/05)
- - [Sessions und Cookies](php/06)
- - [Errors und Exceptions](php/07)
- - [Arbeiten mit Datenbanken](php/08)
- - [Quellcode einbinden](php/09)
- - [Arbeiten mit Projekt-Abhängigkeiten](php/10)
+ - [Grundlagen](php/grundlagen)
+ - [Arrays](php/arrays)
+ - [Superglobals](php/superglobals)
+ - [Funktionen](php/funktionen)
+ - [Objektorientierte Programmierung](php/objektorientierte-programmierung)
+ - [Sessions und Cookies](php/sessions-und-cookies)
+ - [Errors und Exceptions](php/errors-und-exceptions)
+ - [Arbeiten mit Datenbanken](php/datenbanken)
+ - [Quellcode organisieren](php/quellcode-organisieren)
+ - [Arbeiten mit Projektabhängigkeiten](php/arbeiten-mit-projektabhaengigkeiten)
 
 ## Regex
 
