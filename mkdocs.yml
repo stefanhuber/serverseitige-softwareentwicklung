@@ -8,16 +8,16 @@ edit_uri: https://github.com/stefanhuber/Serverseitige-Softwareentwicklung
 nav:
   - Home: 'index.md'
   - 'PHP':
-    - 'Grundlagen': 'php/01.md'
-    - 'Arrays': 'php/02.md'
-    - 'Superglobals': 'php/03.md'
-    - 'Funktionen': 'php/04.md'
-    - 'OOP': 'php/05.md'
-    - 'Sessions und Cookies': 'php/06.md'
-    - 'Errors und Exceptions': 'php/07.md'
-    - 'Datenbanken': 'php/08.md'
-    - 'Quellcode einbinden': 'php/09.md'
-    - 'Arbeiten mit Projektabhängigkeiten':  'php/10.md'
+    - 'Grundlagen': 'php/grundlagen.md'
+    - 'Arrays': 'php/arrays.md'    
+    - 'Funktionen': 'php/funktionen.md'    
+    - 'OOP': 'php/objektorientierte-programmierung.md'
+    - 'Superglobals': 'php/superglobals.md'
+    - 'Sessions und Cookies': 'php/sessions-und-cookies.md'
+    - 'Errors und Exceptions': 'php/errors-und-exceptions.md'
+    - 'Datenbanken': 'php/datenbanken.md'
+    - 'Quellcode organisieren': 'php/quellcode-organisieren.md'
+    - 'Arbeiten mit Projektabhängigkeiten':  'php/arbeiten-mit-projektabhaengigkeiten.md'
   - 'Regex':
     - 'Einführung': 'regex/einführung.md'
     - 'Zeichenklassen': 'regex/zeichenklassen.md'
@@ -39,14 +39,13 @@ nav:
     - 'PHP Webserver': 'tutorials/02.md'
     - 'PHP Konfiguration': 'tutorials/03.md'
     - 'Arbeiten mit SQLite': 'tutorials/04.md'  
-  - 'Übungstutorials':
-    - 'Übungsblatt 1 - Übung 0': 'exercises/01.md'
+    - 'Übungsblatt 1 - Übung 0': 'tutorials/05.md'
 
 theme:
   name: material
   language: de
   features:
-    - tabs
+    - navigation.tabs
   icon:
     logo: fontawesome/solid/server
 
@@ -60,9 +59,10 @@ extra:
     language: de
 
 markdown_extensions:
-  - markdown.extensions.admonition
-  - markdown.extensions.codehilite:
-      guess_lang: false
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.superfences
 
 plugins:
   - search

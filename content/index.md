@@ -1,5 +1,8 @@
 # Serverseitige Softwareentwicklung
 
+!!! info "Hinweis"
+    Dieses Skriptum enthält einen Teil der Inhalte der Lehrveranstaltung [Serverseitige Softwareentwicklung](https://www.fh-kufstein.ac.at/studieren/Bachelor/Web-Business-Technology-VZ/Curriculum/technologie/serverseitige-softwareentwicklung-data-management). Ergänzend zu diesem Skriptum gibt es Videos zur Lehrveranstaltung, welche sich auf [Youtube](https://www.youtube.com/playlist?list=PL9QmSesKWE_haMXPuDkKgrjwxF1UmtVBy) befinden. Alle Übungsaufgaben befinden sich auf [Gitlab](https://gitlab.web.fh-kufstein.ac.at/).
+
 ## PHP
 
  - [Grundlagen](php/grundlagen)
@@ -39,10 +42,8 @@
  - [PHP Webserver](tutorials/02)
  - [PHP Konfiguration](tutorials/03)
  - [Arbeiten mit SQLite](tutorials/04)
+ - [Übungsblatt 1 - Übung 0](tutorials/05)
 
-## Übungstutorials
-
- - [Übungsblatt 1 - Übung 0](exercises/01)
 
 ## Mitwirkung
 
