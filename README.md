@@ -8,6 +8,14 @@ Die Inhalte des Skriptums werden als [Markdown Dokumente](https://en.wikipedia.o
 
 Mit dem Programm [MkDocs](https://www.mkdocs.org/) wird aus den Markdown Dokumenten eine statische Website generiert. Als Theme wurde [Material for MkDocs ](https://squidfunk.github.io/mkdocs-material/) gewählt. Die generierten Inhalte finden sich Ordner [docs](https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/tree/master/content) des Git-Repositories. Der Ordner `docs` wird mittels [GithubPages](https://pages.github.com/) gehostet und ist über diesen [Link](https://stefanhuber.github.io/serverseitige-softwareentwicklung) öffentlich verfügbar.
 
+## Website generieren
+
+ - Python 3 muss installiert sein (pip muss über die Kommandozeile verfügbar sein)
+ - `pip install mkdocs` wird verwendet um [MkDocs](https://www.mkdocs.org/) zu installieren
+ - `pip install mkdocs-material` wird verwendet um [Material for MkDocs ](https://squidfunk.github.io/mkdocs-material/) zu installieren
+ - Mit dem Befehl `mkdocs server` kann die Website live am Localhost betrachtet werden (Änderungen in den Markdown Dateien führen zu einem automatischen Rebuild der Website)
+ - Mit dem Befehl `mkdocs build` kann die Website neu generiert werden, sodass die Änderungen über `git push` veröffentlicht werden können
+
 ## Lizenzierung
 ![Creative Commons Lizenzvertrag](https://i.creativecommons.org/l/by-sa/4.0/88x31.png "Creative Commons Lizenzvertrag")
 

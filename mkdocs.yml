@@ -65,7 +65,6 @@ markdown_extensions:
   - pymdownx.superfences
 
 plugins:
-  - search
-  - minify:
-      minify_html: true
+  - search:
+      lang: de
   

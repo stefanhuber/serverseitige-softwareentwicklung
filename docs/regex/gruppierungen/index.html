@@ -1,6 +1,1008 @@
-<!doctype html><html lang=de class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung"><meta name=author content="Stefan Huber"><link rel="shortcut icon" href=../../assets/images/favicon.png><meta name=generator content="mkdocs-1.1.2, mkdocs-material-7.0.1"><title>Gruppierungen - Serverseitige Softwareentwicklung</title><link rel=stylesheet href=../../assets/stylesheets/main.1655a90d.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.7fa14f5b.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback"><style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style></head> <body dir=ltr data-md-color-scheme data-md-color-primary=none data-md-color-accent=none> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#gruppierungen class=md-skip> Zum Inhalt </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../.. title="Serverseitige Softwareentwicklung" class="md-header__button md-logo" aria-label="Serverseitige Softwareentwicklung"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"/></svg> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Serverseitige Softwareentwicklung </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Gruppierungen </span> </div> </div> </div> <div class=md-header__options> </div> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Suche placeholder=Suche autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query data-md-state=active required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </label> <button type=reset class="md-search__icon md-icon" aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg> </button> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Suche wird initialisiert </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/ title=Quellcode class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../php/grundlagen/ class=md-tabs__link> PHP </a> </li> <li class=md-tabs__item> <a href=../einf%C3%BChrung/ class="md-tabs__link md-tabs__link--active"> Regex </a> </li> <li class=md-tabs__item> <a href=../../webserver/einf%C3%BChrung/ class=md-tabs__link> Web-Server </a> </li> <li class=md-tabs__item> <a href=../../tutorials/01/ class=md-tabs__link> Tutorials </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <label class=md-nav__title for=__drawer> <a href=../.. title="Serverseitige Softwareentwicklung" class="md-nav__button md-logo" aria-label="Serverseitige Softwareentwicklung"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 512 512"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"/></svg> </a> Serverseitige Softwareentwicklung </label> <div class=md-nav__source> <a href=https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/ title=Quellcode class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> GitHub </div> </a> </div> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../.. class=md-nav__link> Home </a> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_2 type=checkbox id=__nav_2> <label class=md-nav__link for=__nav_2> PHP <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=PHP data-md-level=1> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> PHP </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../php/grundlagen/ class=md-nav__link> Grundlagen </a> </li> <li class=md-nav__item> <a href=../../php/arrays/ class=md-nav__link> Arrays </a> </li> <li class=md-nav__item> <a href=../../php/funktionen/ class=md-nav__link> Funktionen </a> </li> <li class=md-nav__item> <a href=../../php/objektorientierte-programmierung/ class=md-nav__link> OOP </a> </li> <li class=md-nav__item> <a href=../../php/superglobals/ class=md-nav__link> Superglobals </a> </li> <li class=md-nav__item> <a href=../../php/sessions-und-cookies/ class=md-nav__link> Sessions und Cookies </a> </li> <li class=md-nav__item> <a href=../../php/errors-und-exceptions/ class=md-nav__link> Errors und Exceptions </a> </li> <li class=md-nav__item> <a href=../../php/datenbanken/ class=md-nav__link> Datenbanken </a> </li> <li class=md-nav__item> <a href=../../php/quellcode-organisieren/ class=md-nav__link> Quellcode organisieren </a> </li> <li class=md-nav__item> <a href=../../php/arbeiten-mit-projektabhaengigkeiten/ class=md-nav__link> Arbeiten mit Projektabhängigkeiten </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3 type=checkbox id=__nav_3 checked> <label class=md-nav__link for=__nav_3> Regex <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Regex data-md-level=1> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Regex </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../einf%C3%BChrung/ class=md-nav__link> Einführung </a> </li> <li class=md-nav__item> <a href=../zeichenklassen/ class=md-nav__link> Zeichenklassen </a> </li> <li class=md-nav__item> <a href=../wiederholungen/ class=md-nav__link> Wiederholungen </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> Gruppierungen <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> Gruppierungen </a> <nav class="md-nav md-nav--secondary" aria-label=Inhaltsverzeichnis> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Inhaltsverzeichnis </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#normale-gruppierung class=md-nav__link> Normale Gruppierung </a> </li> <li class=md-nav__item> <a href=#referenzierung class=md-nav__link> Referenzierung </a> </li> <li class=md-nav__item> <a href=#gruppierung-ohne-ubereinstimmung class=md-nav__link> Gruppierung ohne Übereinstimmung </a> </li> <li class=md-nav__item> <a href=#benannte-gruppierung class=md-nav__link> Benannte Gruppierung </a> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../alternative/ class=md-nav__link> Alternative </a> </li> <li class=md-nav__item> <a href=../anker-und-wortgrenzen/ class=md-nav__link> Anker und Wortgrenzen </a> </li> <li class=md-nav__item> <a href=../modifikationen/ class=md-nav__link> Modifikationen </a> </li> <li class=md-nav__item> <a href=../beispiele/ class=md-nav__link> Beispiele </a> </li> <li class=md-nav__item> <a href=../nutzung-mit-php/ class=md-nav__link> Nutzung mit PHP </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4 type=checkbox id=__nav_4> <label class=md-nav__link for=__nav_4> Web-Server <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Web-Server data-md-level=1> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Web-Server </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../webserver/einf%C3%BChrung/ class=md-nav__link> Einführung </a> </li> <li class=md-nav__item> <a href=../../webserver/funktionen/ class=md-nav__link> Wichtige Funktionen </a> </li> <li class=md-nav__item> <a href=../../webserver/nginx-nutzung/ class=md-nav__link> Nginx Nutzung </a> </li> <li class=md-nav__item> <a href=../../webserver/nginx-konfiguration/ class=md-nav__link> Nginx Konfiguration </a> </li> <li class=md-nav__item> <a href=../../webserver/websockets/ class=md-nav__link> WebSockets </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5 type=checkbox id=__nav_5> <label class=md-nav__link for=__nav_5> Tutorials <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Tutorials data-md-level=1> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> Tutorials </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../tutorials/01/ class=md-nav__link> PHP Installation </a> </li> <li class=md-nav__item> <a href=../../tutorials/02/ class=md-nav__link> PHP Webserver </a> </li> <li class=md-nav__item> <a href=../../tutorials/03/ class=md-nav__link> PHP Konfiguration </a> </li> <li class=md-nav__item> <a href=../../tutorials/04/ class=md-nav__link> Arbeiten mit SQLite </a> </li> <li class=md-nav__item> <a href=../../tutorials/05/ class=md-nav__link> Übungsblatt 1 - Übung 0 </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label=Inhaltsverzeichnis> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Inhaltsverzeichnis </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#normale-gruppierung class=md-nav__link> Normale Gruppierung </a> </li> <li class=md-nav__item> <a href=#referenzierung class=md-nav__link> Referenzierung </a> </li> <li class=md-nav__item> <a href=#gruppierung-ohne-ubereinstimmung class=md-nav__link> Gruppierung ohne Übereinstimmung </a> </li> <li class=md-nav__item> <a href=#benannte-gruppierung class=md-nav__link> Benannte Gruppierung </a> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <a href=https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/regex/gruppierungen.md title="Seite editieren" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg> </a> <h1 id=gruppierungen>Gruppierungen</h1> <p>Mit Gruppierungen können Teile einer Regex als Teilübereinstimmung ausgezeichnet bzw. auch referenziert werden. Eine Gruppierung wird über die normalen Klammern <code>(</code> und <code>)</code> spezifiziert. Regex Engines geben die Gruppierungen als separate Teilübereinstimmungen zurück.</p> <div class="admonition info"> <p class=admonition-title>Merke</p> <p>Eine Wiederholung, welche einer Gruppierung nachfolgt, bezieht sich auf die gesamte Gruppe.</p> </div> <h2 id=normale-gruppierung>Normale Gruppierung</h2> <p>Innerhalb einer Regex kann die Gruppierungsfunktion beliebig genutzt werden. Durch die Gruppierung wird der gruppierte Ausdruck zu einer Einheit.</p> <p>Im folgenden Beispiel sollen Uhrzeitangaben über eine Regex spezifiziert werden. Eine Uhrzeitangabe wird generell über das Format <code>HH:MM</code> (also Stunden <code>:</code> Minuten) angegeben. Stunden und Minuten werden jeweils über 2 Ziffern angegeben. <em>Optional</em> kann auch das Wort <em>Uhr</em> auf die Zeitangabe folgen:</p> <div class=highlight><pre><span></span><code>(\d{2}):(\d{2})( Uhr)?
-</code></pre></div> <p>Die Stunden- bzw. die Minutenangabe bilden jeweils eine Gruppe mit 2 Ziffern. Die Zeichenkette <code>Uhr</code> wird ebenfalls als Gruppe ausgezeichnet und über den Quantor <code>?</code> optional gesetzt. </p> <h2 id=referenzierung>Referenzierung</h2> <p>Gruppen können innerhalb der Regex referenziert werden. Gruppen bekommen implizit einen Index zugewiesen, dieser wird von links nach rechts mit 1 beginnend erzeugt. Eine Gruppe kann über <code>\Index</code> referenziert werden.</p> <p>Im folgenden Beispiel sollen alle Textteile, welche innerhalb von Anführungszeichen stehen, identifiziert werden. Dabei wird eine Gruppe eingeführt <code>(["'])</code>, welche die Zeichenklasse der Anführungszeichen enthält. Diese Gruppe wird am Ende der Regex wieder über <code>\1</code> referenziert, dabei wird jedoch die konkrete Übereinstimmung referenziert und nicht die Regex.</p> <div class=highlight><pre><span></span><code>([&quot;&#39;])[^&quot;&#39;]*\1
-</code></pre></div> <p>Die oben angegebene Regex würde im Text die unterstrichenen Teile finden. Es ist dabei anzumerken, dass Verschachtelungen ignoriert werden. Bei einem öffnenden <code>'</code> werden <code>"</code> bis zum <code>'</code> ignoriert.</p> <pre><code>Lorem Ipsum <span style="text-decoration: underline">"is simply dummy text"</span> of the <span style="text-decoration: underline">'printing and typesetting'</span> industry.
-Lorem <span style="text-decoration: underline">'Ipsum "has been" the'</span> industry standard dummy text ever since the 1500s.</code></pre> <h2 id=gruppierung-ohne-ubereinstimmung>Gruppierung ohne Übereinstimmung</h2> <p>Eine normale Gruppierung erfüllt zwei Aufgaben. Einerseits die Funktion der Gruppierung von Ausdrücken und andererseits die Erzeugung einer referenzierbaren Teilübereinstimmung. Es kann gewünscht werden, dass nur die Funktion der Gruppierung ausgeführt werden soll. Dazu wird die Gruppe mit den Zeichen <code>?:</code> eingeleitet.</p> <p>Im Beispiel der Uhrzeit sollen nur die Stunden- bzw. Minutenangaben referenzierbar sein, nicht jedoch die optionale Zeichenkette:</p> <div class=highlight><pre><span></span><code>(\d{2}):(\d{2})(?: Uhr)?
-</code></pre></div> <h2 id=benannte-gruppierung>Benannte Gruppierung</h2> <p>Für Gruppen können auch Bezeichner vergeben werden. Zur Datenextraktion kann dies sehr nützlich sein. Mit <code>?&lt;name&gt;</code> kann der Bezeichner <code>name</code> für die Gruppe vergeben werden.</p> <p>Im unten stehenden Beispiel werden die Stunden bzw. Minuten über einen definierten Bezeichner identifiziert.</p> <div class=highlight><pre><span></span><code>(?&lt;hours&gt;\d{2}):(?&lt;minutes&gt;\d{2})(?: Uhr)?
-</code></pre></div> </article> </div> </div> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=../wiederholungen/ class="md-footer__link md-footer__link--prev" rel=prev> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg> </div> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Zurück </span> Wiederholungen </div> </div> </a> <a href=../alternative/ class="md-footer__link md-footer__link--next" rel=next> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Weiter </span> Alternative </div> </div> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> CC-BY-SA / Stefan Huber </div> Made with <a href=https://squidfunk.github.io/mkdocs-material/ target=_blank rel=noopener> Material for MkDocs </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt"}, "search": "../../assets/javascripts/workers/search.f5903571.min.js", "version": null}</script> <script src=../../assets/javascripts/bundle.4e3fea51.min.js></script> </body> </html>
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Skriptum zur Lehrveranstaltung Serverseitige Softwareentwicklung">
+      
+      
+      
+        <meta name="author" content="Stefan Huber">
+      
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.3">
+    
+    
+      
+        <title>Gruppierungen - Serverseitige Softwareentwicklung</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1655a90d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gruppierungen" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Serverseitige Softwareentwicklung" class="md-header__button md-logo" aria-label="Serverseitige Softwareentwicklung">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Serverseitige Softwareentwicklung
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Gruppierungen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../php/grundlagen/" class="md-tabs__link">
+        PHP
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../einf%C3%BChrung/" class="md-tabs__link md-tabs__link--active">
+        Regex
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../webserver/einf%C3%BChrung/" class="md-tabs__link">
+        Web-Server
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../tutorials/01/" class="md-tabs__link">
+        Tutorials
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Serverseitige Softwareentwicklung" class="md-nav__button md-logo" aria-label="Serverseitige Softwareentwicklung">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M480 160H32c-17.673 0-32-14.327-32-32V64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm112 248H32c-17.673 0-32-14.327-32-32v-64c0-17.673 14.327-32 32-32h448c17.673 0 32 14.327 32 32v64c0 17.673-14.327 32-32 32zm-48-88c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24zm-64 0c-13.255 0-24 10.745-24 24s10.745 24 24 24 24-10.745 24-24-10.745-24-24-24z"/></svg>
+
+    </a>
+    Serverseitige Softwareentwicklung
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/" title="Quellcode" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        PHP
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="PHP" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          PHP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/grundlagen/" class="md-nav__link">
+        Grundlagen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/arrays/" class="md-nav__link">
+        Arrays
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/funktionen/" class="md-nav__link">
+        Funktionen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/objektorientierte-programmierung/" class="md-nav__link">
+        OOP
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/superglobals/" class="md-nav__link">
+        Superglobals
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/sessions-und-cookies/" class="md-nav__link">
+        Sessions und Cookies
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/errors-und-exceptions/" class="md-nav__link">
+        Errors und Exceptions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/datenbanken/" class="md-nav__link">
+        Datenbanken
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/quellcode-organisieren/" class="md-nav__link">
+        Quellcode organisieren
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../php/arbeiten-mit-projektabhaengigkeiten/" class="md-nav__link">
+        Arbeiten mit Projektabhängigkeiten
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      <label class="md-nav__link" for="__nav_3">
+        Regex
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Regex" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Regex
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../einf%C3%BChrung/" class="md-nav__link">
+        Einführung
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zeichenklassen/" class="md-nav__link">
+        Zeichenklassen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wiederholungen/" class="md-nav__link">
+        Wiederholungen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Gruppierungen
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Gruppierungen
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#normale-gruppierung" class="md-nav__link">
+    Normale Gruppierung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referenzierung" class="md-nav__link">
+    Referenzierung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gruppierung-ohne-ubereinstimmung" class="md-nav__link">
+    Gruppierung ohne Übereinstimmung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benannte-gruppierung" class="md-nav__link">
+    Benannte Gruppierung
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alternative/" class="md-nav__link">
+        Alternative
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../anker-und-wortgrenzen/" class="md-nav__link">
+        Anker und Wortgrenzen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modifikationen/" class="md-nav__link">
+        Modifikationen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../beispiele/" class="md-nav__link">
+        Beispiele
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nutzung-mit-php/" class="md-nav__link">
+        Nutzung mit PHP
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Web-Server
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Web-Server" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Web-Server
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../webserver/einf%C3%BChrung/" class="md-nav__link">
+        Einführung
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../webserver/funktionen/" class="md-nav__link">
+        Wichtige Funktionen
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../webserver/nginx-nutzung/" class="md-nav__link">
+        Nginx Nutzung
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../webserver/nginx-konfiguration/" class="md-nav__link">
+        Nginx Konfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../webserver/websockets/" class="md-nav__link">
+        WebSockets
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        Tutorials
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Tutorials" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Tutorials
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/01/" class="md-nav__link">
+        PHP Installation
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/02/" class="md-nav__link">
+        PHP Webserver
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/03/" class="md-nav__link">
+        PHP Konfiguration
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/04/" class="md-nav__link">
+        Arbeiten mit SQLite
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutorials/05/" class="md-nav__link">
+        Übungsblatt 1 - Übung 0
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#normale-gruppierung" class="md-nav__link">
+    Normale Gruppierung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referenzierung" class="md-nav__link">
+    Referenzierung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gruppierung-ohne-ubereinstimmung" class="md-nav__link">
+    Gruppierung ohne Übereinstimmung
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#benannte-gruppierung" class="md-nav__link">
+    Benannte Gruppierung
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/stefanhuber/Serverseitige-Softwareentwicklung/regex/gruppierungen.md" title="Seite editieren" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="gruppierungen">Gruppierungen</h1>
+<p>Mit Gruppierungen können Teile einer Regex als Teilübereinstimmung ausgezeichnet bzw. auch referenziert werden. Eine Gruppierung wird über die normalen Klammern <code>(</code> und <code>)</code> spezifiziert. Regex Engines geben die Gruppierungen als separate Teilübereinstimmungen zurück.</p>
+<div class="admonition info">
+<p class="admonition-title">Merke</p>
+<p>Eine Wiederholung, welche einer Gruppierung nachfolgt, bezieht sich auf die gesamte Gruppe.</p>
+</div>
+<h2 id="normale-gruppierung">Normale Gruppierung</h2>
+<p>Innerhalb einer Regex kann die Gruppierungsfunktion beliebig genutzt werden. Durch die Gruppierung wird der gruppierte Ausdruck zu einer Einheit.</p>
+<p>Im folgenden Beispiel sollen Uhrzeitangaben über eine Regex spezifiziert werden. Eine Uhrzeitangabe wird generell über das Format <code>HH:MM</code> (also Stunden <code>:</code> Minuten) angegeben. Stunden und Minuten werden jeweils über 2 Ziffern angegeben. <em>Optional</em> kann auch das Wort <em>Uhr</em> auf die Zeitangabe folgen:</p>
+<div class="highlight"><pre><span></span><code>(\d{2}):(\d{2})( Uhr)?
+</code></pre></div>
+<p>Die Stunden- bzw. die Minutenangabe bilden jeweils eine Gruppe mit 2 Ziffern. Die Zeichenkette <code>Uhr</code> wird ebenfalls als Gruppe ausgezeichnet und über den Quantor <code>?</code> optional gesetzt. </p>
+<h2 id="referenzierung">Referenzierung</h2>
+<p>Gruppen können innerhalb der Regex referenziert werden. Gruppen bekommen implizit einen Index zugewiesen, dieser wird von links nach rechts mit 1 beginnend erzeugt. Eine Gruppe kann über <code>\Index</code> referenziert werden.</p>
+<p>Im folgenden Beispiel sollen alle Textteile, welche innerhalb von Anführungszeichen stehen, identifiziert werden. Dabei wird eine Gruppe eingeführt <code>(["'])</code>, welche die Zeichenklasse der Anführungszeichen enthält. Diese Gruppe wird am Ende der Regex wieder über <code>\1</code> referenziert, dabei wird jedoch die konkrete Übereinstimmung referenziert und nicht die Regex.</p>
+<div class="highlight"><pre><span></span><code>([&quot;&#39;])[^&quot;&#39;]*\1
+</code></pre></div>
+<p>Die oben angegebene Regex würde im Text die unterstrichenen Teile finden. Es ist dabei anzumerken, dass Verschachtelungen ignoriert werden. Bei einem öffnenden <code>'</code> werden <code>"</code> bis zum <code>'</code> ignoriert.</p>
+<pre><code>Lorem Ipsum <span style="text-decoration: underline">"is simply dummy text"</span> of the <span style="text-decoration: underline">'printing and typesetting'</span> industry.
+Lorem <span style="text-decoration: underline">'Ipsum "has been" the'</span> industry standard dummy text ever since the 1500s.</code></pre>
+
+<h2 id="gruppierung-ohne-ubereinstimmung">Gruppierung ohne Übereinstimmung</h2>
+<p>Eine normale Gruppierung erfüllt zwei Aufgaben. Einerseits die Funktion der Gruppierung von Ausdrücken und andererseits die Erzeugung einer referenzierbaren Teilübereinstimmung. Es kann gewünscht werden, dass nur die Funktion der Gruppierung ausgeführt werden soll. Dazu wird die Gruppe mit den Zeichen <code>?:</code> eingeleitet.</p>
+<p>Im Beispiel der Uhrzeit sollen nur die Stunden- bzw. Minutenangaben referenzierbar sein, nicht jedoch die optionale Zeichenkette:</p>
+<div class="highlight"><pre><span></span><code>(\d{2}):(\d{2})(?: Uhr)?
+</code></pre></div>
+<h2 id="benannte-gruppierung">Benannte Gruppierung</h2>
+<p>Für Gruppen können auch Bezeichner vergeben werden. Zur Datenextraktion kann dies sehr nützlich sein. Mit <code>?&lt;name&gt;</code> kann der Bezeichner <code>name</code> für die Gruppe vergeben werden.</p>
+<p>Im unten stehenden Beispiel werden die Stunden bzw. Minuten über einen definierten Bezeichner identifiziert.</p>
+<div class="highlight"><pre><span></span><code>(?&lt;hours&gt;\d{2}):(?&lt;minutes&gt;\d{2})(?: Uhr)?
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../wiederholungen/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Zurück
+              </span>
+              Wiederholungen
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../alternative/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Weiter
+              </span>
+              Alternative
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            CC-BY-SA / Stefan Huber
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs"], "translations": {"clipboard.copy": "In Zwischenablage kopieren", "clipboard.copied": "In Zwischenablage kopiert", "search.config.lang": "de", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Suche", "search.result.placeholder": "Suchbegriff eingeben", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.term.missing": "Es fehlt"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ca5457b8.min.js"></script>
+      
+    
+  </body>
+</html>
