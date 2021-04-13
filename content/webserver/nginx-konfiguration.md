@@ -84,7 +84,7 @@ Port und/oder IP-Adresse wird über die `listen` Direktive bestimmt. Die Direkti
  
 #### location
  
-`location` Blöcke finden sicher innerhalb von `server` Blöcken und bestimmen wie einzelne HTTP-Requests verarbeitet werden. Es kann zum Beispiel bestimmt werden, ob:
+`location` Blöcke befinden sich innerhalb von `server` Blöcken und bestimmen wie einzelne HTTP-Requests verarbeitet werden. Es kann zum Beispiel bestimmt werden, ob:
 
  - URIs als statische Dateien zurück gegeben werden sollen
  - URIs PHP Skripte ansteuern sollen
@@ -195,8 +195,8 @@ Zum Beispiel würde die Datei `C:\examples\webshop\index.html` in etwa so ausseh
 Falls Nginx gestartet und die Konfiguration neu geladen wurde, können die Websites im Web-Browser aufgerufen werden.
 
 <div style="display:flex">
-    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%;" src="../images/virtual-hosting-01.png">
-    <img style="flex: 50% 0 0; margin:0 10px max-width:50%;" src="../images/virtual-hosting-02.png">
+    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%; object-fit: contain;" src="../images/virtual-hosting-01.png">
+    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%; object-fit: contain;" src="../images/virtual-hosting-02.png">
 </div>
 
 ### Nginx und PHP (FastCGI)

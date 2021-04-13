@@ -883,9 +883,9 @@
                   </a>
                 
                 
-                <h1 id="websockets">Websockets</h1>
+                <h1 id="websockets">WebSockets</h1>
 <p><code>WebSockets</code> sind <code>Client-initiierte</code> <code>persistente</code> <code>full-duplex</code> Kommunikationskanäle zwischen Web-Browser und Web-Server.</p>
-<p>Der Web-Browser initiiert den <code>WebSocket</code> über einen sog. WebSocket Handshake Request. Falls der Web-Server das <code>WebSocket Protokoll</code> unterstützt antwortet dieser mit einem <code>101 Status</code> und die bestehende TCP-Verbindung wird für den <code>WebSocket</code> verwendet.</p>
+<p>Der Web-Browser initiiert den <code>WebSocket</code> über einen sog. WebSocket Handshake Request. Falls der Web-Server das <code>WebSocket Protokoll</code> unterstützt,  antwortet dieser mit einem <code>101 Status</code> und die bestehende TCP-Verbindung wird für den <code>WebSocket</code> verwendet.</p>
 <p>Der Web-Browser würde beispielsweise folgenden HTTP-Request als <code>WebSocket Handshake Request</code> an den Web-Server senden:</p>
 <div class="highlight"><pre><span></span><code>GET ws://localhost:9080/ HTTP/1.1
 Host: localhost:9080
@@ -953,38 +953,38 @@ Connection: Upgrade
 </code></pre></div>
 <h2 id="einfaches-beispiel">Einfaches Beispiel</h2>
 <p>Durch die Web-Server Architektur von Nginx werden <code>WebSockets</code> unterstützt. Innerhalb eines bereitgestellten <a href="https://github.com/stefanhuber/simple-websocket-demo"><code>Git-Repository</code></a> wurde ein Chat mittels <code>WebSockets</code> implementiert.</p>
-<p>Das Projet besteht aus einer <code>index.html</code>, welche unter anderem den notwendigen JavaScript Code für die <code>WebSocket</code> Anbindung am Client enthält. Ebenfalls findet sich eine Implementierung <code>MessageComponentInterface</code> in PHP für die serverseitige Implementierung des Chats. Dieses Programm wird als PHP Dienst am Web-Server gestartet.</p>
+<p>Das Projekt besteht aus einer <code>index.html</code>, welche unter anderem den notwendigen JavaScript Code für die <code>WebSocket</code> Anbindung am Client enthält. Ebenfalls findet sich eine Implementierung <code>MessageComponentInterface</code> in PHP für die serverseitige Implementierung des Chats. Dieses Programm wird als PHP Dienst am Web-Server gestartet.</p>
 <p>Für das Projekt werden 2 Domänen benötigt. Einerseits die Domain <code>chat.local</code>, welche die <code>index.html</code> Datei über das HTTP-Protokoll ausliefert. Andererseits die Domain <code>socket.chat.local</code>, welche für <code>WebSocket</code> Datenverkehr verwantwortlich ist. In der <code>Hosts-Datei</code> müssen dazu folgende Domänen ergänzt werden:</p>
 <div class="highlight"><pre><span></span><code># Kommentare mit #
 # IP-Adresse / Hostname über Leerraum getrennt
 127.0.0.1   chat.local
 127.0.0.1   socket.chat.local
 </code></pre></div>
-<p>Nginx wird für die <code>WebSocket</code> Anbindung als Reverse Proxy konfiguriert und leitet die <code>WebSocket</code> Komminkation an das entsprechende PHP-Programm weiter:</p>
-<div class="highlight"><pre><span></span><code>http {
-    server {
-        listen 80;
-        server_name chat.local;
-        root C:\examples\web-socket-demo\public;
-    }
+<p>Nginx wird für die <code>WebSocket</code> Anbindung als Reverse Proxy konfiguriert und leitet die <code>WebSocket</code> Kommunikation an das entsprechende PHP-Programm weiter:</p>
+<div class="highlight"><pre><span></span><code><span class="k">http</span> <span class="p">{</span>
+    <span class="kn">server</span> <span class="p">{</span>
+        <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+        <span class="kn">server_name</span> <span class="s">chat.local</span><span class="p">;</span>
+        <span class="kn">root</span> <span class="s">C:\examples\web-socket-demo\public</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    server {
-        listen 80;
-        server_name socket.chat.local;
+    <span class="kn">server</span> <span class="p">{</span>
+        <span class="kn">listen</span> <span class="mi">80</span><span class="p">;</span>
+        <span class="kn">server_name</span> <span class="s">socket.chat.local</span><span class="p">;</span>
 
-        location / {
-            proxy_pass http://localhost:9080;
-            proxy_http_version 1.1;
-            proxy_set_header Upgrade $http_upgrade;
-            proxy_set_header Connection &quot;upgrade&quot;;
-        }   
-    }
-}
+        <span class="kn">location</span> <span class="s">/</span> <span class="p">{</span>
+            <span class="kn">proxy_pass</span> <span class="s">http://localhost:9080</span><span class="p">;</span>
+            <span class="kn">proxy_http_version</span> <span class="mi">1</span><span class="s">.1</span><span class="p">;</span>
+            <span class="kn">proxy_set_header</span> <span class="s">Upgrade</span> <span class="nv">$http_upgrade</span><span class="p">;</span>
+            <span class="kn">proxy_set_header</span> <span class="s">Connection</span> <span class="s">&quot;upgrade&quot;</span><span class="p">;</span>
+        <span class="p">}</span>   
+    <span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div>
 <p>Zum Start und zur Ausführung des Projektes müssen die Schritte in der <code>README</code> befolgt werden. Eine Chat-Konversation zwischen <code>Alice</code> und <code>Bob</code> würde folgendermaßen aussehen. Die ältesten Nachrichten stehen jeweils unten und <code>Alice</code> war bereits im Chatfenster als <code>Bob</code> sich einloggte:</p>
 <div style="display:flex">
-    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%;" src="../images/websocket-chat-01.png">
-    <img style="flex: 50% 0 0; margin:0 10px max-width:50%;" src="../images/websocket-chat-02.png">
+    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%; object-fit: contain;" src="../images/websocket-chat-01.png">
+    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%; object-fit: contain;" src="../images/websocket-chat-02.png">
 </div>
                 
               

@@ -1,8 +1,8 @@
-# Websockets
+# WebSockets
 
 `WebSockets` sind `Client-initiierte` `persistente` `full-duplex` Kommunikationskanäle zwischen Web-Browser und Web-Server.
 
-Der Web-Browser initiiert den `WebSocket` über einen sog. WebSocket Handshake Request. Falls der Web-Server das `WebSocket Protokoll` unterstützt antwortet dieser mit einem `101 Status` und die bestehende TCP-Verbindung wird für den `WebSocket` verwendet.
+Der Web-Browser initiiert den `WebSocket` über einen sog. WebSocket Handshake Request. Falls der Web-Server das `WebSocket Protokoll` unterstützt,  antwortet dieser mit einem `101 Status` und die bestehende TCP-Verbindung wird für den `WebSocket` verwendet.
 
 Der Web-Browser würde beispielsweise folgenden HTTP-Request als `WebSocket Handshake Request` an den Web-Server senden:
 
@@ -92,7 +92,7 @@ class Chat implements MessageComponentInterface
 
 Durch die Web-Server Architektur von Nginx werden `WebSockets` unterstützt. Innerhalb eines bereitgestellten [`Git-Repository`](https://github.com/stefanhuber/simple-websocket-demo) wurde ein Chat mittels `WebSockets` implementiert.
 
-Das Projet besteht aus einer `index.html`, welche unter anderem den notwendigen JavaScript Code für die `WebSocket` Anbindung am Client enthält. Ebenfalls findet sich eine Implementierung `MessageComponentInterface` in PHP für die serverseitige Implementierung des Chats. Dieses Programm wird als PHP Dienst am Web-Server gestartet.
+Das Projekt besteht aus einer `index.html`, welche unter anderem den notwendigen JavaScript Code für die `WebSocket` Anbindung am Client enthält. Ebenfalls findet sich eine Implementierung `MessageComponentInterface` in PHP für die serverseitige Implementierung des Chats. Dieses Programm wird als PHP Dienst am Web-Server gestartet.
 
 Für das Projekt werden 2 Domänen benötigt. Einerseits die Domain `chat.local`, welche die `index.html` Datei über das HTTP-Protokoll ausliefert. Andererseits die Domain `socket.chat.local`, welche für `WebSocket` Datenverkehr verwantwortlich ist. In der `Hosts-Datei` müssen dazu folgende Domänen ergänzt werden:
 
@@ -103,9 +103,9 @@ Für das Projekt werden 2 Domänen benötigt. Einerseits die Domain `chat.local`
 127.0.0.1   socket.chat.local
 ```
 
-Nginx wird für die `WebSocket` Anbindung als Reverse Proxy konfiguriert und leitet die `WebSocket` Komminkation an das entsprechende PHP-Programm weiter:
+Nginx wird für die `WebSocket` Anbindung als Reverse Proxy konfiguriert und leitet die `WebSocket` Kommunikation an das entsprechende PHP-Programm weiter:
 
-```
+```nginx
 http {
     server {
 		listen 80;
@@ -130,6 +130,6 @@ http {
 Zum Start und zur Ausführung des Projektes müssen die Schritte in der `README` befolgt werden. Eine Chat-Konversation zwischen `Alice` und `Bob` würde folgendermaßen aussehen. Die ältesten Nachrichten stehen jeweils unten und `Alice` war bereits im Chatfenster als `Bob` sich einloggte:
 
 <div style="display:flex">
-    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%;" src="../images/websocket-chat-01.png">
-    <img style="flex: 50% 0 0; margin:0 10px max-width:50%;" src="../images/websocket-chat-02.png">
+    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%; object-fit: contain;" src="../images/websocket-chat-01.png">
+    <img style="flex: 50% 0 0; margin:0 10px; max-width:50%; object-fit: contain;" src="../images/websocket-chat-02.png">
 </div>
